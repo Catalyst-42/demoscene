@@ -10,7 +10,7 @@ document.querySelector('.send').addEventListener('click', function () {
     
     xhttp.open("POST", "http://demoscene.herokuapp.com/send.php")
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    xhttp.send('str=' + document.querySelector('.input').value);
+    xhttp.send('str=hello you');
     
     document.querySelector('.input').value = '';
 })
