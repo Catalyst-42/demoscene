@@ -1,6 +1,5 @@
 <?php
     $str = $_POST['str'];
-    $dt = file_get_contents('data.php');
-    echo $str . $dt;
-    file_put_contents('data.php', '<p>' . $str . "</p>", FILE_APPEND);
+    echo $str;
+    file_put_contents('data.php', '<p> new data </p>', FILE_APPEND);
 ?>
