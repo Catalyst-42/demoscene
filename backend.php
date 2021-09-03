@@ -1,5 +1,7 @@
 <?php
-    $a = $_GET['num1'];
-    $a = $_GET['num1'];
-    echo $a+$b;
+    $str = $_GET['num1'];
+    echo $str;
+    $fd = fopen("hello.txt", 'w') or die("не удалось создать файл");
+    fwrite($fd, $str);
+    fclose($fd);
 ?>
