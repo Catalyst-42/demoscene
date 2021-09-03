@@ -1,7 +1,5 @@
 <?php
     $str = $_POST['str'];
     echo $str;
-    $file = fopen('data.php', 'r+');
-    fwrite($file, $str);
-    fclose($file);
+    file_put_contents('data.php', '<p>' . $str . '</p>', FILE_APPEND);
 ?>
