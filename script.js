@@ -16,5 +16,8 @@ xhttp.onreadystatechange = function () {
 }
 
 function addAnswer (data) {
+    let p = document.createElement('p')
+    p.innerHTML = data
+    document.body.appendChild(p)
     console.log(data);
 }
