@@ -8,9 +8,9 @@ xhttp.onreadystatechange = function () {
 document.querySelector('.send').addEventListener('click', function () {
     console.log(document.querySelector('.input').value);
     
-    xhttp.open("POST", "http://demoscene.herokuapp.com/send.php")
+    xhttp.open("POST", "https://demoscene.herokuapp.com/send.php")
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    xhttp.send('str=hello you');
+    xhttp.send('str=' + document.querySelector('.input').value);
     
     document.querySelector('.input').value = '';
 })
