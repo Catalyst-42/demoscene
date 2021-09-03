@@ -3,5 +3,5 @@
     include_once('data.php');
     
     $str = $_POST['num1'];
-    file_put_contents('data.php', '\n<p>' . $str . '<\p>', FILE_APPEND)
+    file_put_contents('data.php', '<p>' . $str . '<\p>', FILE_APPEND)
 ?>
