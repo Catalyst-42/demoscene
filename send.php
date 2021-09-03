@@ -1,6 +1,5 @@
 <?php
     $str = $_POST['str'];
-    file_put_contents('data.php', '<p>' . $str . "</p>", FILE_APPEND);
+    file_put_contents('data.php', '<p>' . $str . "</p>");
     echo $str;
-    include_once('data.php');
 ?>
