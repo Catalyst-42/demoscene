@@ -17,7 +17,7 @@
 
     if ($result == false) {
         echo '<br>результат ложный';
-        echo $result
+        echo $result;
     }
 
     while ($row = mysqli_fetch_array($result)) {
