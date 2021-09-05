@@ -10,7 +10,7 @@
     $link = new mysqli($server, $username, $password, $db);
     mysqli_set_charset($link, "utf8");
 
-    $sql = 'SELECT comment FROM near';
+    $sql = 'SELECT comment FROM near ORDER BY id';
     $result = mysqli_query($link, $sql);
 
     while ($row = mysqli_fetch_array($result)) {
