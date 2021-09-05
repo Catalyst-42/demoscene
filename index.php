@@ -6,8 +6,7 @@
     $sql = 'SELECT comment FROM near;';
     $result = mysqli_query($link, $sql);
 
-    // while ($row = mysqli_fetch_array($result)) {
-    //     print("Город: " . $row['comment'] . "<br>");
-    // }
-    echo $result
+    while ($row = mysqli_fetch_array($result)) {
+        echo "Город: " . $row['comment'] . "<br>";
+    }
 ?>
