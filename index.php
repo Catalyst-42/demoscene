@@ -9,7 +9,7 @@
     }
     else {
         echo "Соединение установлено успешно";
-        mysqli_set_charset($link, "utf8");
+        // mysqli_set_charset($link, "utf8");
     }
 
     $sql = 'SELECT comment FROM `near`';

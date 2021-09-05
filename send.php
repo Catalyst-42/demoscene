@@ -11,7 +11,7 @@
     }
     else {
         print("Соединение установлено успешно");
-        mysqli_set_charset($link, "utf8");
+        // mysqli_set_charset($link, "utf8");
     }
 
     $sql = "INSERT near(comment) VALUES('" . $str . "')";
