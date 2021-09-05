@@ -9,6 +9,6 @@
     
     $rows = mysqli_fetch_all($result, MYSQLI_ASSOC);    
     foreach ($rows as $row) {
-        print("Город: " . $row['name'] . "; Идентификатор: . " . $row['id'] . "<br>");
+        echo "Город: " . $row['name'] . "; Идентификатор: . " . $row['id'] . "<br>";
     }
 ?>
