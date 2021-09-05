@@ -4,7 +4,13 @@
     // file_put_contents('data.php', '<p>' . $str . '</p>', FILE_APPEND);
     // include_once('data.php');
 
-    $link = mysqli_connect("us-cdbr-east-04.cleardb.com", "bae47087acc5a8", "69125eeb");
+    $url = parse_url(getenv("CLEARDB_DATABASE_URL"));
+    $server = $url["host"];
+    $username = $url["user"];
+    $password = $url["pass"];
+    $db = substr($url["path"], 1);
+
+    $link = new mysqli($server, $username, $password, $db);
 
     $sql = "INSERT INTO near SET comment = '" . $str . "'";
     $result = mysqli_query($link, $sql);

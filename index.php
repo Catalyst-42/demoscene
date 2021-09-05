@@ -1,7 +1,13 @@
 <?php    
     include_once('index.html');
 
-    $link = mysqli_connect("us-cdbr-east-04.cleardb.com", "bae47087acc5a8", "69125eeb");
+    $url = parse_url(getenv("CLEARDB_DATABASE_URL"));
+    $server = $url["host"];
+    $username = $url["user"];
+    $password = $url["pass"];
+    $db = substr($url["path"], 1);
+
+    $link = new mysqli($server, $username, $password, $db);
 
     $sql = 'SELECT comment FROM near';
     $result = mysqli_query($link, $sql);
