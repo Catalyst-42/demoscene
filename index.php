@@ -12,11 +12,12 @@
         // mysqli_set_charset($link, "utf8");
     }
 
-    $sql = 'SELECT comment FROM `near`';
+    $sql = 'SELECT comment FROM near';
     $result = mysqli_query($link, $sql);
 
     if ($result == false) {
         echo '<br>результат ложный';
+        echo $result
     }
 
     while ($row = mysqli_fetch_array($result)) {
