@@ -7,7 +7,7 @@
     $link = mysqli_connect("us-cdbr-east-04.cleardb.com", "bae47087acc5a8", "69125eeb");
 
     if ($link == false) {
-        print("Ошибка: Невозможно подключиться к MySQL " . mysqli_connect_error());
+        echo "Ошибка: Невозможно подключиться к MySQL " . mysqli_connect_error();
     }
     else {
         print("Соединение установлено успешно");
@@ -18,7 +18,7 @@
     $result = mysqli_query($link, $sql);
 
     if ($result == false) {
-        print("Произошла ошибка при выполнении запроса");
+        echo "Произошла ошибка при выполнении запроса";
     }
 
 ?>
