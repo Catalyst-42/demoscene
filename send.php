@@ -14,7 +14,7 @@
         mysqli_set_charset($link, "utf8");
     }
 
-    $sql = 'INSERT INTO near SET comment = "'  . $str . '"';
+    $sql = 'INSERT INTO near (comment) values ("'  . $str . '")';
     $result = mysqli_query($link, $sql);
 
     if ($result == false) {
