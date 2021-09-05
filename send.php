@@ -4,7 +4,7 @@
     // file_put_contents('data.php', '<p>' . $str . '</p>', FILE_APPEND);
     // include_once('data.php');
 
-    $link = mysqli_connect("us-cdbr-east-04.cleardb.com", "heroku_bae47087acc5a8", "69125eeb");
+    $link = mysqli_connect("us-cdbr-east-04.cleardb.com", "bae47087acc5a8", "69125eeb");
 
     if ($link == false) {
         echo "Ошибка: Невозможно подключиться к MySQL " . mysqli_connect_error();
