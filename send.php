@@ -11,6 +11,7 @@
     $db = substr($url["path"], 1);
 
     $link = new mysqli($server, $username, $password, $db);
+    mysqli_set_charset($link, "utf8");
 
     $sql = "INSERT INTO near SET comment = '" . $str . "'";
     $result = mysqli_query($link, $sql);

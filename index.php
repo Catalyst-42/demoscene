@@ -8,6 +8,7 @@
     $db = substr($url["path"], 1);
 
     $link = new mysqli($server, $username, $password, $db);
+    mysqli_set_charset($link, "utf8");
 
     $sql = 'SELECT comment FROM near';
     $result = mysqli_query($link, $sql);
