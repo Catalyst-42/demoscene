@@ -1,6 +1,6 @@
 <?php
     $str = $_POST['str'];
-    echo [$str, date("d-m-y H:m:s")];
+    echo $str;
 
     $url = parse_url(getenv("CLEARDB_DATABASE_URL"));
     $server = $url["host"];
