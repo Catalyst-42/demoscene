@@ -12,5 +12,5 @@
     mysqli_set_charset($link, "utf8");
 
     $sql = "INSERT INTO near(comment, data) VALUES ('$str', NOW())";
-    $result = mysqli_query($link, $sql);
+    $result = [mysqli_query($link, $sql), NOW()];
 ?>

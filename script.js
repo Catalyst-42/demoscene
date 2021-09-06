@@ -17,7 +17,6 @@ document.querySelector('.send').addEventListener('click', function () {
 
 function addAnswer (data) {
     let p = document.createElement('p')
-    let now = new Date()
-    p.innerHTML = now.getDate() + '-' + now.getMonth() + '-' + now.getFullYear() + ' ' + now.getHours() + ':' + now.getMinutes() + ':' + now.getSeconds()+ '<br>' + data
+    p.innerHTML = data[0] + '<br>' + data[1]
     document.body.appendChild(p)
 }
