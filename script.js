@@ -24,6 +24,6 @@ function addAnswer (data) {
     let minutes = date_ob.getMinutes()
     let seconds = date_ob.getSeconds()
     let p = document.createElement('p')
-    p.innerHTML =  date + "-" + month + "-" + year + " " + hours + ":" + minutes + ":" + seconds + '<br>' + data
+    p.innerHTML =  year + "-" + month + "-" + date + " " + hours + ":" + minutes + ":" + seconds + '<br>' + data
     document.body.appendChild(p)
 }
