@@ -1,6 +1,8 @@
 <?php
     $str = $_POST['str'];
+    $dat = $_POST['dat'];
     echo $str;
+    echo $dat;
 
     $url = parse_url(getenv("CLEARDB_DATABASE_URL"));
     $server = $url["host"];
@@ -11,6 +13,6 @@
     $link = new mysqli($server, $username, $password, $db);
     mysqli_set_charset($link, "utf8");
 
-    $sql = "INSERT INTO near SET comment = '" . $str . "'";
+    $sql = "INSERT INTO near(comment, data) VALUES ('$str', NOW())";
     $result = mysqli_query($link, $sql);
 ?>

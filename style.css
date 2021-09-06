@@ -1,1 +1,31 @@
-/* unload */
+body {
+    background-color: black;
+    color: greenyellow;
+    display: block;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: medium;
+}
+
+.comment { 
+    padding: 2px;
+}
+  
+textarea {
+    display: block;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+input, textarea {
+    display: flex;
+    flex-wrap: wrap;
+    font-size: medium;
+    
+    background-color: #000; /* Green */
+    border: none;
+    text-align: left;
+    text-decoration: none;
+    display: inline-block;
+    color: greenyellow;
+    border: 1px solid greenyellow;
+}
