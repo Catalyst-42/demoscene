@@ -13,4 +13,6 @@
 
     $sql = "INSERT INTO near(comment, data) VALUES ('$str', NOW())";
     $result = [mysqli_query($link, $sql), date("d-m-y H:m:s")];
+    echo [mysqli_query($link, $sql), date("d-m-y H:m:s")]
+
 ?>
