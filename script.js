@@ -17,6 +17,6 @@ document.querySelector('.send').addEventListener('click', function () {
 
 function addAnswer (data) {
     let p = document.createElement('p')
-    p.innerHTML = data[0] + '<br>' + data[1]
+    p.innerHTML = data + '<br>'
     document.body.appendChild(p)
 }

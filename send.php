@@ -1,6 +1,6 @@
 <?php
     $str = $_POST['str'];
-    echo $str;
+    echo [$str, date("d-m-y H:m:s")];
 
     $url = parse_url(getenv("CLEARDB_DATABASE_URL"));
     $server = $url["host"];
@@ -12,7 +12,5 @@
     mysqli_set_charset($link, "utf8");
 
     $sql = "INSERT INTO near(comment, data) VALUES ('$str', NOW())";
-    $result = [mysqli_query($link, $sql), date("d-m-y H:m:s")];
-    echo [mysqli_query($link, $sql), date("d-m-y H:m:s")]
-
+    $result = mysqli_query($link, $sql)
 ?>
