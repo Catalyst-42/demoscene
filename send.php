@@ -1,8 +1,6 @@
 <?php
     $str = $_POST['str'];
-    $dat = $_POST['dat'];
     echo $str;
-    echo $dat;
 
     $url = parse_url(getenv("CLEARDB_DATABASE_URL"));
     $server = $url["host"];

@@ -9,12 +9,8 @@ document.querySelector('.send').addEventListener('click', function () {
     console.log(document.querySelector('.input').value);
     
     xhttp.open("POST", "https://demoscene.herokuapp.com/send.php")
-    xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    
-    var sqlDateStr = new Date().format("dd-mm-yyyy hh-MM-ss");
-    console.log(sqlDateStr)
-    
-    xhttp.send('str=' + document.querySelector('.input').value + '&dat=' + sqlDateStr);
+    xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");    
+    xhttp.send('str=' + document.querySelector('.input').value);
     
     document.querySelector('.input').value = '';
 })
