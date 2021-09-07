@@ -15,9 +15,12 @@ document.querySelector('.send').addEventListener('click', function () {
     document.querySelector('.input').value = '';
 })
 
-function addAnswer (data) {
-    console.log(data)
+function update() {
+	send_request('load')
+}
+interval = setInterval(update,500)
 
+function addAnswer (data) {
     let date_ob = new Date()
     let date = ("0" + date_ob.getDate()).slice(-2)
     let month = ("0" + (date_ob.getMonth() + 1)).slice(-2)
