@@ -15,6 +15,10 @@
 
     $sql = "SELECT MAX(id) FROM near";
     $result = mysqli_query($link, $sql);
-    
+
+    while ($row = mysqli_fetch_array($result)) {
+        $result = $row['id'];
+    }
+
     echo json_encode(array("str" => $str, "id" => $result));
 ?>
