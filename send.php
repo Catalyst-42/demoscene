@@ -17,5 +17,7 @@
     $result = mysqli_query($link, $sql);
 
     echo $str;
-    echo mysqli_fetch_array($result);
+    while ($qq = mysqli_fetch_array($result)) {
+        echo $qq['id'];
+    }
 ?>
