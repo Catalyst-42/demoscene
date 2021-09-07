@@ -12,6 +12,6 @@
     
     $sql = "INSERT INTO near(comment, data) VALUES ('$str', NOW())";
     $result = mysqli_query($link, $sql);
-
-    echo $str . '->' . mysql_result(mysql_query("SELECT MAX(id) FROM near"), 0);
+    $maxx = mysql_result(mysql_query("SELECT MAX(id) as id FROM near"), 0);
+    echo $str . '->' . $maxx;
 ?>
