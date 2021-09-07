@@ -19,7 +19,5 @@
     $row = mysqli_fetch_array($result);
     $data[] = $row;
 
-    echo json_decode($data);
-
-
+    echo json_encode($data);
 ?>
