@@ -16,8 +16,5 @@
     $sql = "SELECT MAX(id) FROM near";
     $result = mysqli_query($link, $sql);
 
-    echo $str;
-    while ($qq = mysqli_fetch_array($result)) {
-        echo $qq['id'];
-    }
+    echo $str . mysqli_fetch_array($result)['id'];
 ?>
