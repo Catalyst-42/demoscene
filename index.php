@@ -10,10 +10,10 @@
     $link = new mysqli($server, $username, $password, $db);
     mysqli_set_charset($link, "utf8");
 
-    $sql = 'SELECT comment, data FROM near ORDER BY id';
+    $sql = 'SELECT comment, data, id FROM near ORDER BY id';
     $result = mysqli_query($link, $sql);
 
     while ($row = mysqli_fetch_array($result)) {
-        echo "<p class='comment'>" . $row['data'] . '<br>'. $row['comment'] . "</p>";
+        echo "<p class='comment' id='" . $row['id'] . "'>" . $row['data'] . '<br>'. $row['comment'] . "</p>";
     }
 ?>
