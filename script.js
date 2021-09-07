@@ -1,16 +1,18 @@
-let xhttp = new XMLHttpRequest()
+let xhttp = new XMLHttpRequest();
 xhttp.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
-        addAnswer(this.responseText)
+        addAnswer(this.responseText);
     }
 }
 
-document.querySelector('.send').addEventListener('click', function () {    
-    xhttp.open("POST", "https://demoscene.herokuapp.com/send.php")
-    xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded")
-    xhttp.send('str=' + document.querySelector('.input').value)
+document.querySelector('.send').addEventListener('click', function () {
+    console.log(document.querySelector('.input').value);
     
-    document.querySelector('.input').value = ''
+    xhttp.open("POST", "https://demoscene.herokuapp.com/send.php")
+    xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");    
+    xhttp.send('str=' + document.querySelector('.input').value);
+    
+    document.querySelector('.input').value = '';
 })
 
 function addAnswer (data) {
@@ -23,5 +25,5 @@ function addAnswer (data) {
     let seconds = date_ob.getSeconds()
     let p = document.createElement('p')
     p.innerHTML =  year + "-" + month + "-" + date + " " + hours + ":" + minutes + ":" + seconds + '<br>' + data
-    document.body.querySelector('.body').appendChild(p)
+    document.body.appendChild(p)
 }
