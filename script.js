@@ -25,7 +25,15 @@ function addAnswer (data) {
     let seconds = date_ob.getSeconds()
     let p = document.createElement('p')
     p.classList.add('comment')
-    p.id = ''
+
     p.innerHTML =  year + "-" + month + "-" + date + " " + hours + ":" + minutes + ":" + seconds + '<br>' + data
     document.body.querySelector('.comments').appendChild(p)
 }
+
+[
+    {"0":"hi2",
+    "comment":"hi2",
+    "1":"2021-09-07 20:24:39",
+    "data":"2021-09-07 20:24:39",
+    "2":"15",
+    "id":"15"}]
