@@ -15,11 +15,6 @@ document.querySelector('.send').addEventListener('click', function () {
     document.querySelector('.input').value = '';
 })
 
-function update() {
-	send_request('load')
-}
-interval = setInterval(update,500)
-
 function addAnswer (data) {
     let date_ob = new Date()
     let date = ("0" + date_ob.getDate()).slice(-2)
