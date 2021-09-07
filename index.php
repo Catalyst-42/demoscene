@@ -1,5 +1,20 @@
 <?php    
-    include_once('index.html');
+    echo <<< END
+    <!DOCTYPE html>
+    <html lang="ru">
+    <head>
+      <!-- подключение основных плюшек и шрифтов style.css -->
+      <meta content='width=device-width, initial-scale=1' name='viewport'/>
+      <meta charset="UTF-8">
+      <link rel="stylesheet" href="style.css">
+      <link rel="icon" type="image/png" href="./images/StageNumberBig.png">
+      <link rel="apple-touch-icon" type="image/png" href="./images/StageNumberBig.png">
+      <title>StageL</title>
+    </head>
+    
+    <body>
+      <div class='comments'>
+    END;
 
     $url = parse_url(getenv("CLEARDB_DATABASE_URL"));
     $server = $url["host"];
@@ -16,4 +31,14 @@
     while ($row = mysqli_fetch_array($result)) {
         echo "<p class='comment'>" . $row['data'] . '<br>'. $row['comment'] . "</p>";
     }
+    
+    echo <<< END
+    </div>
+      <div><textarea class='input' cols="45" rows="8"></textarea></div>
+      <input type="submit" class="send button" value="ADD">
+      <!-- подключение мозгов сайта script.js --> 
+      <script src="script.js"></script>
+    </body>
+    </html>
+    END;
 ?>
