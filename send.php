@@ -1,6 +1,5 @@
 <?php
     $str = $_POST['str'];
-    echo $str;
     
     $url = parse_url(getenv("CLEARDB_DATABASE_URL"));
     $server = $url["host"];
@@ -13,4 +12,6 @@
     
     $sql = "INSERT INTO near(comment, data) VALUES ('$str', NOW())";
     $result = mysqli_query($link, $sql);
+    
+    echo json_encode(array("str" => $str, "res" => $result));
 ?>

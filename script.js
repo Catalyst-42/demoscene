@@ -16,6 +16,8 @@ document.querySelector('.send').addEventListener('click', function () {
 })
 
 function addAnswer (data) {
+    console.log(data)
+
     let date_ob = new Date()
     let date = ("0" + date_ob.getDate()).slice(-2)
     let month = ("0" + (date_ob.getMonth() + 1)).slice(-2)
@@ -25,6 +27,7 @@ function addAnswer (data) {
     let seconds = date_ob.getSeconds()
     let p = document.createElement('p')
     p.classList.add('comment')
+    p.id = ''
     p.innerHTML =  year + "-" + month + "-" + date + " " + hours + ":" + minutes + ":" + seconds + '<br>' + data
     document.body.querySelector('.comments').appendChild(p)
 }
