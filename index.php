@@ -14,6 +14,6 @@
     $result = mysqli_query($link, $sql);
 
     while ($row = mysqli_fetch_array($result)) {
-        echo "<p class='comment' id='" . $row['id'] . "'>" . $row['data'] . '<br>'. $row['comment'] . "</p>";
+        echo "<p class='comment'>" . $row['data'] . '<br>'. $row['comment'] . "</p>";
     }
 ?>

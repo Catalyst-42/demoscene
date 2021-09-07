@@ -24,6 +24,7 @@ function addAnswer (data) {
     let minutes = date_ob.getMinutes()
     let seconds = date_ob.getSeconds()
     let p = document.createElement('p')
+    p.classList.add('comment')
     p.innerHTML =  year + "-" + month + "-" + date + " " + hours + ":" + minutes + ":" + seconds + '<br>' + data
-    document.body.appendChild(p)
+    document.body.querySelector('.comments').appendChild(p)
 }
