@@ -15,7 +15,7 @@
     $result = mysqli_query($link, $sql);
 
     // $sql = "SELECT id FROM near ORDER BY id DESC LIMIT 0, 1";
-    $sql = "SELECT id FROM near ORDER BY id WHERE id>=15";
+    $sql = "SELECT comment, data, id FROM near WHERE id>=15 ORDER BY id";
     $result = mysqli_query($link, $sql);
     $row = mysqli_fetch_array($result);
     $data[] = $row;
