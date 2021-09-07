@@ -1,15 +1,8 @@
 let xhttp = new XMLHttpRequest();
 xhttp.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
-        addAnswer(this.responseText);
+        // addAnswer(this.responseText);
     }
-}
-
-setInterval(update, 5000)
-function update () {
-    // xhttp.open("POST", "https://demoscene.herokuapp.com/update.php")
-    // xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");    
-    // xhttp.send('id=' + last_id);
 }
 
 document.querySelector('.send').addEventListener('click', function () {    
