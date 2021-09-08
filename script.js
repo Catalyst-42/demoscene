@@ -18,13 +18,12 @@ function update () {
     xhttp.open("POST", "https://demoscene.herokuapp.com/send.php")
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded")
 
-    console.log(document.getElementById("0").lastElementChild.id)
-
-    // xhttp.send('id=' + document.querySelector('.input').value)
+    xhttp.send('id=' + document.getElementById("0").lastElementChild.id)
 }
 
 function addAnswer (data) {
-
+    console.log(data)
+    
     // let date_ob = new Date()
     // let date = ("0" + date_ob.getDate()).slice(-2)
     // let month = ("0" + (date_ob.getMonth() + 1)).slice(-2)
@@ -34,7 +33,6 @@ function addAnswer (data) {
     // let seconds = date_ob.getSeconds()
 
     data = JSON.parse(data)
-    console.log(data.length)
     
     for (let i=0; i<data.length; i++) {
         let p = document.createElement('p')
