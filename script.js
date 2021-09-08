@@ -25,8 +25,6 @@ function addAnswer (data) {
 
     console.log(data)
     data = JSON.parse(data)
-    console.log('parsed:')
-    console.log(data)
 
     for (i=0; i<=data.length(); i++) {
         let p = document.createElement('p')
