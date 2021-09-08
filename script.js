@@ -10,11 +10,8 @@ xhttp.onreadystatechange = function () {
 document.querySelector('.send').addEventListener('click', function () {    
     xhttp.open("POST", "https://demoscene.herokuapp.com/send.php")
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded")
-    if ((document.getElementById("0").lastElementChild.id) == null) { id = 0
-    } else { document.getElementById("0").lastElementChild.id }
-
+    try { id = document.getElementById("0").lastElementChild.id } catch { id = 0 }
     xhttp.send('str=' + document.querySelector('.input').value + '&id=' + id)
-    
     document.querySelector('.input').value = ''
 })
 
@@ -22,10 +19,7 @@ setInterval(update, 3000)
 function update () {
     xhttp.open("POST", "https://demoscene.herokuapp.com/send.php")
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded")
-
-    if ((document.getElementById("0").lastElementChild.id) == null) { id = 0
-    } else { document.getElementById("0").lastElementChild.id }
-
+    try { id = document.getElementById("0").lastElementChild.id } catch { id = 0 }
     xhttp.send('id=' + id)
 }
 
