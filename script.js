@@ -7,11 +7,21 @@ xhttp.onreadystatechange = function () {
 
 document.querySelector('.send').addEventListener('click', function () {    
     xhttp.open("POST", "https://demoscene.herokuapp.com/send.php")
-    xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");    
-    xhttp.send('str=' + document.querySelector('.input').value);
+    xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded")
+    xhttp.send('str=' + document.querySelector('.input').value)
     
-    document.querySelector('.input').value = '';
+    document.querySelector('.input').value = ''
 })
+
+setInterval(update, 3000) 
+function update () {
+    xhttp.open("POST", "https://demoscene.herokuapp.com/send.php")
+    xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded")
+
+    console.log(document.getElementsByClassName(".comments").lastElementChild.id)
+
+    // xhttp.send('id=' + document.querySelector('.input').value)
+}
 
 function addAnswer (data) {
 

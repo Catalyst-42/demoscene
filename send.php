@@ -1,5 +1,6 @@
 <?php
     $str = $_POST['str'];
+    $id = $_POST['id'];
     // echo $str;
 
     $url = parse_url(getenv("CLEARDB_DATABASE_URL"));
