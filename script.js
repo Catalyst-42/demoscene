@@ -25,13 +25,13 @@ function addAnswer (data) {
     // let minutes = date_ob.getMinutes()
     // let seconds = date_ob.getSeconds()
 
-    for (i in data) {
+    for (i in data.length()) {
         let p = document.createElement('p')
         p.classList.add('comment')
-        p.id = i[2]
-        
+        p.id = data[i][2]
+
         // p.innerHTML =  year + "-" + month + "-" + date + " " + hours + ":" + minutes + ":" + seconds + '<br>' + data
-        p.innerHTML =  i[1] + "<br>" + i[0]
+        p.innerHTML =  data[i][1] + "<br>" + data[i][0]
         document.body.querySelector('.comments').appendChild(p)
     }
 
