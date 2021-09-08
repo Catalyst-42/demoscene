@@ -18,9 +18,9 @@
     $sql = "SELECT comment, data, id FROM near WHERE id>=25 ORDER BY id";
     $result = mysqli_query($link, $sql);
     $types = array();
-    while(($row =  mysql_fetch_assoc($result))) {
-        $types[] = $row['type'];
+    while($row =  mysqli_fetch_assoc($result)) {
+        $types[] = $row['comment'];
     }
 
-    echo json_encode($data);
+    echo json_encode($types);
 ?>
