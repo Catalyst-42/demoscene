@@ -26,7 +26,7 @@ function addAnswer (data) {
     console.log(data)
     data = JSON.parse(data)
 
-    for (i=0; i<=data.length(); i++) {
+    for (i=0; i<=data.length; i++) {
         let p = document.createElement('p')
         p.classList.add('comment')
         p.id = data[i][2]
