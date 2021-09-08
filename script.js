@@ -28,9 +28,9 @@ function addAnswer (data) {
     // let seconds = date_ob.getSeconds()
 
     data = JSON.parse(data)
-    console.log(data)
-
-    for (i=0; i<data.length; i++) {
+    console.log(data.length)
+    
+    for (let i=0; i<data.length; i++) {
         let p = document.createElement('p')
         p.classList.add('comment')
         p.id = data[i][2]
