@@ -20,7 +20,7 @@
     $result = mysqli_query($link, $sql);
     $types = array();
     while($row =  mysqli_fetch_assoc($result)) {
-        $types[] = [$row['comment'], $row['data'], $row['id']];
+        $types[] = array('comment' => $row['comment'], 'data' => $row['data'], 'id' => $row['id']);
     }
 
     echo json_encode($types, JSON_UNESCAPED_UNICODE);

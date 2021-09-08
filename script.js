@@ -25,6 +25,8 @@ function addAnswer (data) {
 
     console.log(data)
     data = JSON.parse(data)
+    console.log('parsed:')
+    console.log(data)
 
     for (i in data.length()) {
         let p = document.createElement('p')
@@ -35,5 +37,4 @@ function addAnswer (data) {
         p.innerHTML =  data[i][1] + "<br>" + data[i][0]
         document.body.querySelector('.comments').appendChild(p)
     }
-
 }
