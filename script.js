@@ -8,7 +8,7 @@ xhttp.onreadystatechange = function () {
 document.querySelector('.send').addEventListener('click', function () {    
     xhttp.open("POST", "https://demoscene.herokuapp.com/send.php")
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded")
-    xhttp.send('str=' + document.querySelector('.input').value)
+    xhttp.send('str=' + document.querySelector('.input').value + '&id=' + document.getElementById("0").lastElementChild.id)
     
     document.querySelector('.input').value = ''
 })
@@ -22,16 +22,6 @@ function update () {
 }
 
 function addAnswer (data) {
-    console.log(data)
-    
-    // let date_ob = new Date()
-    // let date = ("0" + date_ob.getDate()).slice(-2)
-    // let month = ("0" + (date_ob.getMonth() + 1)).slice(-2)
-    // let year = date_ob.getFullYear()
-    // let hours = date_ob.getHours()
-    // let minutes = date_ob.getMinutes()
-    // let seconds = date_ob.getSeconds()
-
     data = JSON.parse(data)
     
     for (let i=0; i<data.length; i++) {
