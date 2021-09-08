@@ -1,4 +1,6 @@
-let xhttp = new XMLHttpRequest();
+let xhttp = new XMLHttpRequest()
+let id = 0
+
 xhttp.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
         addAnswer(this.responseText);
@@ -8,7 +10,10 @@ xhttp.onreadystatechange = function () {
 document.querySelector('.send').addEventListener('click', function () {    
     xhttp.open("POST", "https://demoscene.herokuapp.com/send.php")
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded")
-    xhttp.send('str=' + document.querySelector('.input').value + '&id=' + document.getElementById("0").lastElementChild.id)
+    if ((document.getElementById("0").lastElementChild.id) == null) { id = 0
+    } else { document.getElementById("0").lastElementChild.id }
+
+    xhttp.send('str=' + document.querySelector('.input').value + '&id=' + id)
     
     document.querySelector('.input').value = ''
 })
@@ -18,7 +23,10 @@ function update () {
     xhttp.open("POST", "https://demoscene.herokuapp.com/send.php")
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded")
 
-    xhttp.send('id=' + document.getElementById("0").lastElementChild.id)
+    if ((document.getElementById("0").lastElementChild.id) == null) { id = 0
+    } else { document.getElementById("0").lastElementChild.id }
+
+    xhttp.send('id=' + id)
 }
 
 function addAnswer (data) {
