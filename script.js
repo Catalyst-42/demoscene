@@ -1,3 +1,7 @@
+data = [{"comment":"yo","data":"2021-09-07 20:26:20","id":"25"},{"comment":"hello","data":"2021-09-07 20:30:27","id":"35"},{"comment":"hello","data":"2021-09-07 20:33:03","id":"45"},{"comment":"русский текст","data":"2021-09-07 21:00:06","id":"55"}]
+
+console.log(data.length)
+
 let xhttp = new XMLHttpRequest();
 xhttp.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
@@ -23,8 +27,8 @@ function addAnswer (data) {
     // let minutes = date_ob.getMinutes()
     // let seconds = date_ob.getSeconds()
 
-    console.log(data)
     data = JSON.parse(data)
+    console.log(data)
 
     for (i=0; i<data.length; i++) {
         let p = document.createElement('p')
