@@ -19,7 +19,7 @@
     $result = mysqli_query($link, $sql);
     $types = array();
     while($row =  mysqli_fetch_assoc($result)) {
-        $types[] = $row['comment'];
+        $types[] = [$row['comment'], $row['data'], $row['id']];
     }
 
     echo json_encode($types);
