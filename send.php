@@ -18,7 +18,7 @@
         $result = mysqli_query($link, $sql);
     }
 
-    $sql = "SELECT comment, data, id FROM near WHERE id>='$id' ORDER BY id";
+    $sql = "SELECT comment, data, id FROM near WHERE id>'$id' ORDER BY id";
     $result = mysqli_query($link, $sql);
     $types = array();
     while($row =  mysqli_fetch_assoc($result)) {
