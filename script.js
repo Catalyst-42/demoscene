@@ -25,6 +25,8 @@ function addAnswer (data) {
     // let minutes = date_ob.getMinutes()
     // let seconds = date_ob.getSeconds()
 
+    data = JSON.parse(data)
+
     for (i in data.length()) {
         let p = document.createElement('p')
         p.classList.add('comment')

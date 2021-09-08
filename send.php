@@ -15,6 +15,7 @@
     // $result = mysqli_query($link, $sql);
 
     // $sql = "SELECT id FROM near ORDER BY id DESC LIMIT 0, 1";
+
     $sql = "SELECT comment, data, id FROM near WHERE id>=25 ORDER BY id";
     $result = mysqli_query($link, $sql);
     $types = array();
@@ -22,5 +23,5 @@
         $types[] = [$row['comment'], $row['data'], $row['id']];
     }
 
-    echo json_encode($types);
+    echo json_encode($types, JSON_UNESCAPED_UNICODE);
 ?>
