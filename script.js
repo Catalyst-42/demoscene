@@ -28,7 +28,7 @@ function addAnswer (data) {
     console.log('parsed:')
     console.log(data)
 
-    for (i in data.length()) {
+    for (i=0; i<=data.length(); i++) {
         let p = document.createElement('p')
         p.classList.add('comment')
         p.id = data[i][2]
