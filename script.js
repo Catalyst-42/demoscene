@@ -5,9 +5,7 @@ xhttp.onreadystatechange = function () {
     }
 }
 
-document.querySelector('.send').addEventListener('click', function () {
-    console.log(document.querySelector('.input').value);
-    
+document.querySelector('.send').addEventListener('click', function () {    
     xhttp.open("POST", "https://demoscene.herokuapp.com/send.php")
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");    
     xhttp.send('str=' + document.querySelector('.input').value);
@@ -25,7 +23,8 @@ function addAnswer (data) {
     // let minutes = date_ob.getMinutes()
     // let seconds = date_ob.getSeconds()
 
-    data = JSON.parse('{' + data + '}')
+    console.log(data)
+    data = JSON.parse(data)
 
     for (i in data.length()) {
         let p = document.createElement('p')
