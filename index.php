@@ -13,7 +13,7 @@
     </head>
     
     <body>
-      <div class='comments'>
+      <div class='comments' id='0'>
     END;
 
     $url = parse_url(getenv("CLEARDB_DATABASE_URL"));
