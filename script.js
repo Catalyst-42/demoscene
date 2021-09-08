@@ -29,10 +29,10 @@ function addAnswer (data) {
     for (let i=0; i<data.length; i++) {
         let p = document.createElement('p')
         p.classList.add('comment')
-        p.id = data[i][2]
+        p.id = data[i]['id']
 
         // p.innerHTML =  year + "-" + month + "-" + date + " " + hours + ":" + minutes + ":" + seconds + '<br>' + data
-        p.innerHTML =  data[i][1] + "<br>" + data[i][0]
+        p.innerHTML =  data[i]['data'] + "<br>" + data[i]['comment']
         document.body.querySelector('.comments').appendChild(p)
     }
 }
