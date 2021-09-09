@@ -2,7 +2,7 @@ body {
     background-color: #fff;
     color: black;
     display: block;    
-    font-family: 'Cousine', monospace;
+    font-family: 'Courier New', Courier, monospace;
     font-weight: 700;
 }
 
@@ -28,7 +28,7 @@ input, textarea {
     display: inline-block;
     color: black;
     
-    font-family: 'Cousine', monospace;
+    font-family: 'Courier New', Courier, monospace;
     font-weight: 700;
    
     border: 1px solid black;
