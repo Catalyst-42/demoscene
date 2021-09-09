@@ -4,6 +4,10 @@
     <html lang="ru">
     <head>
       <!-- подключение основных плюшек и шрифтов style.css -->
+      <link rel="preconnect" href="https://fonts.googleapis.com"> 
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+      <link href="https://fonts.googleapis.com/css2?family=Cousine&display=swap" rel="stylesheet">
+
       <meta content='width=device-width, initial-scale=1' name='viewport'/>
       <meta charset="UTF-8">
       <link rel="stylesheet" href="style.css">
