@@ -23,8 +23,12 @@
     $db = substr($url["path"], 1);
 
     $link = new mysqli($server, $username, $password, $db);
-    mysqli_set_charset($link, "utf8");
+    if (mysqli_connect_errno()) {
+      printf("Connect failed: %s\n", mysqli_connect_error());
+      exit();
+    }
 
+    mysqli_set_charset($link, "utf8");
     $sql = 'SELECT comment, data, id FROM near ORDER BY id';
     $result = mysqli_query($link, $sql);
 
