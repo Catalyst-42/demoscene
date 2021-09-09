@@ -32,7 +32,7 @@ function addAnswer (data) {
         p.id = data[i]['id']
 
         // p.innerHTML =  year + "-" + month + "-" + date + " " + hours + ":" + minutes + ":" + seconds + '<br>' + data
-        p.innerHTML =  data[i]['data'] + "<br>" + data[i]['comment']
+        p.innerHTML =  "<span class='bg'>" + data[i]['data']  + "</span" + "<br>" + data[i]['comment']
         document.body.querySelector('.comments').appendChild(p)
     }
 }

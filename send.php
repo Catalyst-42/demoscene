@@ -11,8 +11,6 @@
     $link = new mysqli($server, $username, $password, $db);
     mysqli_set_charset($link, "utf8");
 
-    // $sql = "SELECT id FROM near ORDER BY id DESC LIMIT 0, 1";
-
     if ($str != '') {
         $sql = "INSERT INTO near(comment, data) VALUES ('$str', NOW())";
         $result = mysqli_query($link, $sql);

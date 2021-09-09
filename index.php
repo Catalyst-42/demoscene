@@ -29,7 +29,7 @@
     $result = mysqli_query($link, $sql);
 
     while ($row = mysqli_fetch_array($result)) {
-        echo "<p class='comment' id='" . $row['id'] . "'>" . $row['data'] . '<br>'. $row['comment'] . "</p>";
+        echo "<p class='comment' id='" . $row['id'] . "'>" . "<span class='bg'>" . $row['data'] . '</span' . '<br>'. $row['comment'] . "</p>"; 
     }
     
     echo <<< END
