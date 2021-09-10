@@ -24,7 +24,7 @@ function update () {
 
 function addAnswer (data) {
     clearInterval(interval)
-    interval = setInterval(update, 3000)
+    interval = setInterval(update, 10000)
     data = JSON.parse(data)
     
     for (let i=0; i<data.length; i++) {
