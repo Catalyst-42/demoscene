@@ -1,5 +1,6 @@
 let xhttp = new XMLHttpRequest()
 let id = 0
+let interval = setTimeout(update, 3000) 
 
 xhttp.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
@@ -14,8 +15,6 @@ document.querySelector('.send').addEventListener('click', function () {
     xhttp.send('str=' + document.querySelector('.input').value + '&id=' + id)
     document.querySelector('.input').value = ''
 })
-
-setTimeout(update, 3000) 
 function update () {
     xhttp.open("POST", "https://demoscene.herokuapp.com/send.php")
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded")
