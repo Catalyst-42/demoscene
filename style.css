@@ -37,6 +37,7 @@ input, textarea {
 .information {
     float: right;
     position: sticky;
+    top: 16px;
 }
 
 .rainbow {
