@@ -1,5 +1,5 @@
 <?php
-    $str = $_POST['str'];
+    if (isset($_POST['str'])) { $str = $_POST['str']; } else { $str = ''; }
     $id = $_POST['id'];
 
     $url = parse_url(getenv("CLEARDB_DATABASE_URL"));
@@ -13,7 +13,7 @@
     } catch (PDOException $e){
         exit();
     }
-    
+
     if (mysqli_connect_errno()) {
         printf("Connect failed: %s\n", mysqli_connect_error());
         exit();
