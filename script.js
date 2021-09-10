@@ -20,7 +20,7 @@ function update () {
     xhttp.open("POST", "https://demoscene.herokuapp.com/send.php")
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded")
     try { id = document.getElementById("0").lastElementChild.id } catch { id = 0 }
-    xhttp.send('id=' + id)
+    xhttp.send("&id=" + id)
 }
 
 function addAnswer (data) {

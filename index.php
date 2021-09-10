@@ -9,6 +9,11 @@
       <link rel="stylesheet" href="style.css">
       <link rel="icon" type="image/png" href="./images/StageNumberBig.png">
       <link rel="apple-touch-icon" type="image/png" href="./images/StageNumberBig.png">
+      
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=PT+Mono&display=swap" rel="stylesheet">
+      
       <title>StageL</title>
     </head>
     
