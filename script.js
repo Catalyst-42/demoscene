@@ -1,3 +1,7 @@
+const myModal = new HystModal({
+    linkAttributeName: "data-hystmodal",
+});
+
 let xhttp = new XMLHttpRequest()
 let id = 0
 

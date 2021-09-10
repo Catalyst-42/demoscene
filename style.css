@@ -34,6 +34,10 @@ input, textarea {
     border: 1px solid black;
 }
 
+.information {
+    float: right;
+}
+
 .rainbow {
     background: linear-gradient(to right, rgb(252, 104, 110), rgb(255, 255, 110), rgb(155, 255, 110), rgb(252, 102, 255), rgb(153, 100, 255), rgb(114, 255, 255), rgb(252, 104, 110));
     background-size: 500px 200%;
