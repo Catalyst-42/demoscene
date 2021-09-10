@@ -18,6 +18,7 @@
     </head>
     
     <body>
+      <a class='information' href='https://demoscene.herokuapp.com/i.html'>i</a>
       <div class='comments' id='0'>
     END;
 
