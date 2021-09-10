@@ -8,7 +8,12 @@
     $password = $url["pass"];
     $db = substr($url["path"], 1);
 
-    $link = new mysqli($server, $username, $password, $db);
+    try {
+        $link = new mysqli($server, $username, $password, $db);
+    } catch (PDOException $e){
+        exit();
+    }
+    
     if (mysqli_connect_errno()) {
         printf("Connect failed: %s\n", mysqli_connect_error());
         exit();

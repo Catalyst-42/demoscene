@@ -15,7 +15,7 @@ document.querySelector('.send').addEventListener('click', function () {
     document.querySelector('.input').value = ''
 })
 
-setInterval(update, 3000) 
+setTimeout(update, 3000) 
 function update () {
     xhttp.open("POST", "https://demoscene.herokuapp.com/send.php")
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded")
@@ -24,6 +24,8 @@ function update () {
 }
 
 function addAnswer (data) {
+    clearInterval(interval)
+    interval = setInterval(update, 3000)
     data = JSON.parse(data)
     
     for (let i=0; i<data.length; i++) {
