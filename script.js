@@ -1,6 +1,6 @@
 let xhttp = new XMLHttpRequest()
 let id = 0
-let interval = setTimeout(update, 3000) 
+let interval = setTimeout(update, 10000) 
 
 xhttp.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
