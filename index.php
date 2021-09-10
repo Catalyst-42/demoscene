@@ -43,7 +43,7 @@
     
     echo <<< END
     </div>
-      <div><textarea class='input' cols="45" rows="8"></textarea></div>
+      <div><textarea maxlength="255" class='input' cols="45" rows="8"></textarea></div>
       <input type="submit" class="send button" value="ADD">
       <!-- подключение мозгов сайта script.js --> 
       <script src="script.js"></script>
