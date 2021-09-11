@@ -15,6 +15,7 @@ document.querySelector('.send').addEventListener('click', function () {
     xhttp.send('str=' + document.querySelector('.input').value + '&id=' + id)
     document.querySelector('.input').value = ''
 })
+
 function update () {
     xhttp.open("POST", "https://demoscene.herokuapp.com/send.php")
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded")
