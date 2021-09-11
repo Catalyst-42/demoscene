@@ -21,15 +21,15 @@
     mysqli_set_charset($link, "utf8");
 
     if ($str != '') {
-        $sql = "INSERT INTO near(comment, data) VALUES ('$str', NOW())";
+        $sql = "INSERT INTO near(comments, data) VALUES ('$str', NOW())";
         $result = mysqli_query($link, $sql);
     }
 
-    $sql = "SELECT comment, data, id FROM near WHERE id>'$id' ORDER BY id";
+    $sql = "SELECT comments, data, id FROM near WHERE id>'$id' ORDER BY id";
     $result = mysqli_query($link, $sql);
     $types = array();
     while($row =  mysqli_fetch_assoc($result)) {
-        array_push($types, array('comment' => $row['comment'], 'data' => $row['data'], 'id' => $row['id']));
+        array_push($types, array('comments' => $row['comments'], 'data' => $row['data'], 'id' => $row['id']));
     }
     
     echo json_encode($types, JSON_UNESCAPED_UNICODE);

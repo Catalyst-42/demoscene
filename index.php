@@ -35,11 +35,11 @@
     }
 
     mysqli_set_charset($link, "utf8");
-    $sql = 'SELECT comment, data, id FROM near ORDER BY id';
+    $sql = 'SELECT comments, data, id FROM near ORDER BY id';
     $result = mysqli_query($link, $sql);
 
     while ($row = mysqli_fetch_array($result)) {
-        echo "<p class='comment' id='" . $row['id'] . "'>" . "<span class='bg'>" . $row['data'] . '</span><br>'. $row['comment'] . "</p>"; 
+        echo "<p class='comment' id='" . $row['id'] . "'>" . "<span class='bg'>" . $row['data'] . '</span><br>'. $row['comments'] . "</p>"; 
     }
     
     echo <<< END

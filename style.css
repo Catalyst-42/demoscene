@@ -6,10 +6,8 @@ body {
     font-weight: 500;
 }
 
-.comment { 
-    padding: 2px;
-}
-  
+.comment { padding: 2px; }
+
 textarea {
     display: block;
     flex-direction: column;
