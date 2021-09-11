@@ -32,7 +32,7 @@ function addAnswer (data) {
         let p = document.createElement('p')
         p.classList.add('comment')
         p.id = data[i]['id']
-        p.innerHTML =  "<span class='bg'>" + data[i]['data']  + "</span><br>" + data[i]['comment']
+        p.innerHTML =  "<span class='bg'>" + data[i]['data']  + "</span><br>" + data[i]['comments']
         document.body.querySelector('.comments').appendChild(p)
     }
 }
