@@ -1,0 +1,67 @@
+.rainbow-animated {
+  background: linear-gradient(to right, rgb(252, 104, 110), rgb(255, 255,110), rgb(155, 255, 110), rgb(252, 102, 255), rgb(153, 100, 255), rgb(114, 255, 255), rgb(252, 104, 110));
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-animation: rainbow 4s linear infinite;
+  animation: rainbow 4s linear infinite;
+  animation-direction: reverse;
+  margin: 0;
+}
+
+@keyframes rainbow {
+  0% { background-position: 0% 100% }
+  50% { background-position: 100% 200% }
+  100% { background-position: 200% 0% }
+}
+
+.silver-animated {
+  background: linear-gradient(to right, #fff, #000, #000, #fff);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-animation: silver 2s linear infinite;
+  animation: silver 2s linear infinite;
+  animation-direction: reverse;
+  margin: 0;
+}
+
+@keyframes silver {
+  0% { background-position: 0% 100% }
+  50% { background-position: 100% 200%}
+  100% { background-position: 200% 0%}
+}
+
+.shake-animated {
+  display: inline-flex;
+  margin: 0;
+}
+
+.shake { animation: shake 0.5s linear infinite; }
+@keyframes shake {
+  0% { transform: translate(1px, 1px) rotate(0deg); }
+  10% { transform: translate(-1px, -2px) rotate(-1deg); }
+  20% { transform: translate(-3px, 0px) rotate(1deg); }
+  30% { transform: translate(3px, 2px) rotate(0deg); }
+  40% { transform: translate(1px, -1px) rotate(1deg); }
+  50% { transform: translate(-1px, 2px) rotate(-1deg); }
+  60% { transform: translate(-3px, 1px) rotate(0deg); }
+  70% { transform: translate(3px, 1px) rotate(-1deg); }
+  80% { transform: translate(-1px, -1px) rotate(1deg); }
+  90% { transform: translate(1px, 2px) rotate(0deg); }
+  100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+.jump-animated {
+  display: inline-flex;
+  margin: 0;
+}
+
+.jump { animation: jump 0.5s ease infinite; }
+@keyframes jump {
+  0%   { transform: translateY(4px); }
+  50%  { transform: translateY(-8px);}
+  100%  { transform: translateY(4px);}
+}

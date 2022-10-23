@@ -8,6 +8,10 @@ body {
 
 .comment { padding: 2px; }
 
+pre {
+    font-size: 16px;
+}
+
 textarea {
     display: block;
     flex-direction: column;

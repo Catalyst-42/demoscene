@@ -7,6 +7,7 @@
       <meta content='width=device-width, initial-scale=1' name='viewport'/>
       <meta charset="UTF-8">
       <link rel="stylesheet" href="style.css">
+      <link rel="stylesheet" href="effects.css">
       <link rel="icon" type="image/png" href="./images/DemosceneBig.png">
       <link rel="apple-touch-icon" type="image/png" href="./images/DemosceneBig.png">
       
@@ -48,6 +49,8 @@
       <input type="submit" class="send button" value="ADD">
       <!-- подключение мозгов сайта script.js --> 
       <script src="script.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+      <script src="animation.js"></script>
     </body>
     </html>
     END;
