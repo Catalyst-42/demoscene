@@ -1,6 +1,7 @@
 let xhttp = new XMLHttpRequest()
-let id = 0
+let id = document.querySelectorAll(".comment:last-child")[0].id
 let interval = setTimeout(update, 10000) 
+console.log(id)
 
 xhttp.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
@@ -11,7 +12,7 @@ xhttp.onreadystatechange = function () {
 document.querySelector('.send').addEventListener('click', function () {    
     xhttp.open("POST", "https://demoscene.herokuapp.com/send.php")
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded")
-    try { id = document.getElementById("0").lastElementChild.id } catch { id = 0 }
+    try { id = document.querySelectorAll(".comment:last-child")[0].id } catch { id = 0 }
     xhttp.send('str=' + document.querySelector('.input').value + '&id=' + id)
     document.querySelector('.input').value = ''
 })
@@ -19,7 +20,7 @@ document.querySelector('.send').addEventListener('click', function () {
 function update () {
     xhttp.open("POST", "https://demoscene.herokuapp.com/send.php")
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded")
-    try { id = document.getElementById("0").lastElementChild.id } catch { id = 0 }
+    try { id = document.querySelectorAll(".comment:last-child")[0].id } catch { id = 0 }
     xhttp.send("&id=" + id)
 }
 
