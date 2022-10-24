@@ -36,10 +36,16 @@ input, textarea {
     border: 1px solid black;
 }
 
-.information {
+.link {
+    text-decoration: none;
+
+    position: fixed;
     float: right;
-    position: sticky;
-    top: 16px;
+    right: 16px; 
+}
+
+.link:hover {
+    cursor: pointer;
 }
 
 .rainbow {

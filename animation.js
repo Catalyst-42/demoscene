@@ -1,3 +1,11 @@
+function toTop() {
+    $("html, body").scrollTop(1)
+}
+
+function toBottom() {
+    $("html, body").scrollTop($(document).height())
+}
+
 function applyAnimations() {
   // apply shake effect
   $(".shake-animated").not(".compiled").each(function() {

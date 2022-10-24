@@ -19,7 +19,9 @@
     </head>
     
     <body>
-      <a class='information' href='https://demoscene.herokuapp.com/information.html'>i</a>
+      <a class="link" style="top: 16px;" href='https://demoscene.herokuapp.com/information.html'><u>i</u></a>
+      <a class="link" style="top: 38px; font-size: 16px" onclick="toTop()"><u>&lt;</u></a>
+      <a class="link" style="top: 64px; font-size: 16px" onclick="toBottom()"><u>&gt;</u></a>
       <div class='comments' id='0'>
     END;
 
