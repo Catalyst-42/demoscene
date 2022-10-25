@@ -30,10 +30,10 @@ function addAnswer (data) {
     data = JSON.parse(data)
     
     for (let i=0; i<data.length; i++) {
-        let div = document.createElement('div')
-        div.classList.add('comment')
-        div.id = data[i]['id']
-        div.innerHTML =  "<span class='bg'>" + data[i]['data']  + "</span><br>" + data[i]['comments']
-        document.body.querySelector('.comments').appendChild(div)
+        let p = document.createElement('p')
+        p.classList.add('comment')
+        p.id = data[i]['id']
+        p.innerHTML =  "<span class='bg'>" + data[i]['data']  + "</span><br>" + data[i]['comments']
+        document.body.querySelector('.comments').appendChild(p)
     }
 }
