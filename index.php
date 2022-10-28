@@ -3,7 +3,6 @@
     <!DOCTYPE html>
     <html lang="ru">
     <head>
-      <!-- подключение основных плюшек и шрифтов style.css -->
       <meta content='width=device-width, initial-scale=1' name='viewport'/>
       <meta charset="UTF-8">
       <link rel="stylesheet" href="style.css">
@@ -16,12 +15,17 @@
       <link href="https://fonts.googleapis.com/css2?family=PT+Mono&display=swap" rel="stylesheet">
       
       <title>Demoscene</title>
-    </head>
-    
-    <body>
       <a class="link" style="top: 16px;" href='https://demoscene.herokuapp.com/information.html'><u>i</u></a>
       <a class="link" style="top: 38px; font-size: 16px" onclick="toTop()"><u>&lt;</u></a>
       <a class="link" style="top: 64px; font-size: 16px" onclick="toBottom()"><u>&gt;</u></a>
+  
+      <a class="link standart" style="top: 112px; font-size: 16px" onclick="setTheme('standart')">S</a>
+      <a class="link dark" style="top: 136px; font-size: 16px" onclick="setTheme('dark')">D</a>
+      <a class="link gradient" style="top: 160px; font-size: 16px" onclick="setTheme('gradient')">R</a>
+      <a class="link hacker" style="top: 184px; font-size: 16px" onclick="setTheme('hacker')">H</a>
+    </head>
+    
+    <body class="standart">
       <div class='comments' id='0'>
     END;
 
@@ -49,7 +53,7 @@
     </div>
       <div><textarea maxlength="1023" class='input' cols="40" rows="8"></textarea></div>
       <input type="submit" class="send button" value="ADD">
-      <!-- подключение мозгов сайта script.js --> 
+
       <script src="script.js"></script>
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
       <script src="animation.js"></script>

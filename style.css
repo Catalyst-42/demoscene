@@ -1,15 +1,15 @@
 body {
-    background-color: #fff;
-    color: black;
     display: block;    
     font-family: 'PT Mono', Courier, monospace;
     font-weight: 500;
 }
 
-.comment { padding: 2px; }
-
 pre {
     font-size: 16px;
+}
+
+a.link, a.link:visited, a.link:hover, a.link:active {
+    color: inherit;
 }
 
 textarea {
@@ -22,19 +22,18 @@ input, textarea {
     display: flex;
     flex-wrap: wrap;
     font-size: medium;
-   
-    background-color: #fff;
+    
     border: none;
     text-align: left;
     text-decoration: none;
     display: inline-block;
-    color: black;
     
     font-family: 'PT Mono', Courier, monospace;
     font-weight: 500;
-   
-    border: 1px solid black;
+    
 }
+
+.comment { padding: 2px; }
 
 .link {
     text-decoration: none;
@@ -48,99 +47,166 @@ input, textarea {
     cursor: pointer;
 }
 
-.rainbow {
-    background: linear-gradient(to right, rgb(252, 104, 110), rgb(255, 255, 110), rgb(155, 255, 110), rgb(252, 102, 255), rgb(153, 100, 255), rgb(114, 255, 255), rgb(252, 104, 110));
-    background-size: 500px 200%;
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    -webkit-animation: rainbow-animate 3s linear infinite;
-    animation: rainbow-animate 3s linear infinite;
+/* Standart theme */
+a.standart {
+    background-color: #fff;
+    color: black;
+    border-radius: 1px;
+    border-color: black;
 }
 
-.bg {
-  background-color: #aaa;;
+body.standart a.standart {
+    background: transparent;
 }
 
-@keyframes rainbow-animate {
-    0% { background-position: 0 250px; }
-    50% { background-position: 250px 500px; }
-    100% { background-position: 500px 0; }
+body.standart {
+    background-color: #fff !important;
+    color: black;
 }
 
-/* shake zone */
-.shake0 {
+body.standart .bg {
+    background-color: #aaa;;
+}
+
+body.standart input, body.standart textarea {
+    background-color: #fff;
+    color: black;
+    border: 1px solid black;
+}
+
+body.standart textarea:focus {
+    outline: none;
+}
+
+/* Dark theme */
+a.dark {
+    background-color: #40444b;
+    color: white;
+    border-radius: 1px;
+    border-color: black;
+}
+
+body.dark a.dark {
+    background: transparent;
+}
+
+body.dark {
+    background: #36393f;
+    color: white;
+}
+
+body.dark .bg {
+    background: black;
+}
+
+body.dark textarea {
+    background-color: #40444b;
+    border: 1px solid black;
+    color: white;
+}
+
+body.dark textarea:focus {
+    outline: 1px solid #4CAF50;
+}
+
+body.dark input {
     display: inline-block;
-    animation: shake0-animate 0.5s linear infinite;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color: #4CAF50;
+    border: 1px solid black;
 }
 
-@keyframes shake0-animate {
-    0% { transform: translate(1px, 1px) rotate(0deg); }
-    10% { transform: translate(-1px, -2px) rotate(-1deg); }
-    20% { transform: translate(-3px, 0px) rotate(1deg); }
-    30% { transform: translate(3px, 2px) rotate(0deg); }
-    40% { transform: translate(1px, -1px) rotate(1deg); }
-    50% { transform: translate(-1px, 2px) rotate(-1deg); }
-    60% { transform: translate(-3px, 1px) rotate(0deg); }
-    70% { transform: translate(3px, 1px) rotate(-1deg); }
-    80% { transform: translate(-1px, -1px) rotate(1deg); }
-    90% { transform: translate(1px, 2px) rotate(0deg); }
-    100% { transform: translate(1px, -2px) rotate(-1deg); }
+/* Gradient theme */
+a.gradient {
+    color: black;
+    border-radius: 1px solid black;
+
+    background: linear-gradient(90deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-position-x: calc(400vw - 16px);
+    background-size: 400vh 400vw;
+    -webkit-animation: gradient-animation 16s linear infinite;
+    animation: gradient-animation 16s linear infinite;
+    animation-direction: reverse;
 }
 
-.shake1 {
+body.gradient a.gradient {
+    background: transparent;
+}
+
+body.gradient .bg {
+    background-color: rgba(0, 0, 0, 0.2);
+    color: black;
+}
+
+body.gradient input, body.gradient textarea {
+    color: black;
+    border: 1px solid black;
+    
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+body.gradient textarea:focus {
+    outline: none;
+}
+
+body.gradient {
+    color: black;
+
+    background: linear-gradient(90deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400vh 400vw;
+    -webkit-animation: gradient-animation 16s linear infinite;
+    animation: gradient-animation 16s linear infinite;
+    animation-direction: reverse;
+}
+
+@keyframes gradient-animation {
+    0% { background-position: 0% 50% }
+    50% { background-position: 100% 50% }
+    100% { background-position: 0% 50% }
+}
+
+/* Dark theme */
+a.hacker {
+    background-color: #40444b;
+    color: #0f0;
+    border-radius: 1px;
+    border-color: black;
+}
+
+body.hacker a.hacker {
+    background: transparent;
+}
+
+body.hacker {
+    background: black;
+    color: #0f0;
+}
+
+body.hacker .bg {
+    background: black;
+}
+
+body.hacker textarea {
+    background-color: black;
+    border: 1px solid #0f0;
+    color: #0f0;
+}
+
+body.hacker textarea:focus {
+    outline: 1px solid #0f0;
+}
+
+body.hacker input {
     display: inline-block;
-    animation: shake1-animate 0.5s linear infinite;
-}
-
-@keyframes shake1-animate {
-    0% { transform: translate(1px, -1px) rotate(1deg); }
-    10% { transform: translate(3px, 2px) rotate(0deg); }
-    20% { transform: translate(-1px, -2px) rotate(-1deg); }
-    30% { transform: translate(3px, 1px) rotate(-1deg); }
-    40% { transform: translate(-3px, 0px) rotate(1deg); }
-    50% { transform: translate(1px, 2px) rotate(0deg); }
-    60% { transform: translate(-3px, 1px) rotate(0deg); }
-    70% { transform: translate(-1px, 2px) rotate(-1deg); }
-    8% { transform: translate(1px, 1px) rotate(0deg); }
-    90% { transform: translate(-1px, -1px) rotate(1deg); }
-    100% { transform: translate(1px, -2px) rotate(-1deg); }
-}
-
-.shake2 {
-    display: inline-block;
-    animation: shake2-animate 0.5s linear infinite;
-}
-
-@keyframes shake2-animate {
-    0% { transform: translate(3px, 1px) rotate(-1deg); }
-    10% { transform: translate(-1px, -2px) rotate(-1deg); }
-    20% { transform: translate(-1px, 2px) rotate(-1deg); }
-    30% { transform: translate(-3px, 0px) rotate(1deg); }
-    40% { transform: translate(3px, 2px) rotate(0deg); }
-    50% { transform: translate(1px, 1px) rotate(0deg); }
-    60% { transform: translate(1px, -1px) rotate(1deg); }
-    70% { transform: translate(1px, -2px) rotate(-1deg); }
-    80% { transform: translate(-3px, 1px) rotate(0deg); }
-    90% { transform: translate(-1px, -1px) rotate(1deg); }
-    100% { transform: translate(1px, 2px) rotate(0deg); }
-}
-
-.shake3 {
-    display: inline-block;
-    animation: shake3-animate 0.5s linear infinite;
-}
-
-@keyframes shake3-animate {
-    0% { transform: translate(3px, 1px) rotate(-1deg); }
-    10% { transform: translate(-1px, 2px) rotate(-1deg); }
-    20% { transform: translate(1px, 2px) rotate(0deg); }
-    30% { transform: translate(-3px, 0px) rotate(1deg); }
-    40% { transform: translate(3px, 2px) rotate(0deg); }
-    50% { transform: translate(-3px, 1px) rotate(0deg); }
-    60% { transform: translate(1px, -1px) rotate(1deg); }
-    70% { transform: translate(1px, 1px) rotate(0deg); }
-    80% { transform: translate(1px, -2px) rotate(-1deg); }
-    90% { transform: translate(-1px, -2px) rotate(-1deg); }
-    100% { transform: translate(-1px, -1px) rotate(1deg); }
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #0f0;
+    background-color: black;
+    border: 1px solid #0f0;
 }
