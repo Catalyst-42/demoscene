@@ -38,16 +38,16 @@
     $link = new mysqli($server, $username, $password, $db);
     if (mysqli_connect_errno()) {
       printf("Connect failed: %s\n", mysqli_connect_error());
-      echo "<p class='comment' id='0'>" . "<span class='bg'>._.</span><br>Database is down...</p>"; 
-      exit();
+      echo "<p class='comment' id='1'>" . "<span class='bg'>._.</span><br>Database is down...</p>"; 
     }
-
-    mysqli_set_charset($link, "utf8");
-    $sql = 'SELECT comments, data, id FROM near ORDER BY id';
-    $result = mysqli_query($link, $sql);
-
-    while ($row = mysqli_fetch_array($result)) {
-        echo "<p class='comment' id='" . $row['id'] . "'>" . "<span class='bg'>" . $row['data'] . '</span><br>'. $row['comments'] . "</p>"; 
+    else {
+      mysqli_set_charset($link, "utf8");
+      $sql = 'SELECT comments, data, id FROM near ORDER BY id';
+      $result = mysqli_query($link, $sql);
+  
+      while ($row = mysqli_fetch_array($result)) {
+          echo "<p class='comment' id='" . $row['id'] . "'>" . "<span class='bg'>" . $row['data'] . '</span><br>'. $row['comments'] . "</p>"; 
+      }
     }
     
     echo <<< END
