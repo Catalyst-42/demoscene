@@ -27,35 +27,11 @@
     
     <body class="standart">
       <div class='comments' id='0'>
+      <p class='comment' id='1'><span class='bg'>._.</span><br>Database is down...</p>
     END;
-
-    $url = parse_url(getenv("CLEARDB_DATABASE_URL"));
-    $server = $url["host"];
-    $username = $url["user"];
-    $password = $url["pass"];
-    $db = substr($url["path"], 1);
-
-    $link = new mysqli($server, $username, $password, $db);
-    if (mysqli_connect_errno()) {
-      printf("Connect failed: %s\n", mysqli_connect_error());
-      echo "<p class='comment' id='0'>" . "<span class='bg'>._.</span><br>Database is down...</p>"; 
-      exit();
-    }
-    else {
-      mysqli_set_charset($link, "utf8");
-      $sql = 'SELECT comments, data, id FROM near ORDER BY id';
-      $result = mysqli_query($link, $sql);
-  
-      while ($row = mysqli_fetch_array($result)) {
-          echo "<p class='comment' id='" . $row['id'] . "'>" . "<span class='bg'>" . $row['data'] . '</span><br>'. $row['comments'] . "</p>"; 
-      }
-    }
 
     echo <<< END
     </div>
-      <div><textarea maxlength="1023" class='input' cols="40" rows="8"></textarea></div>
-      <input type="submit" class="send button" value="ADD">
-
       <script src="script.js"></script>
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
       <script src="animation.js"></script>
