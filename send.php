@@ -21,8 +21,7 @@
     mysqli_set_charset($link, "utf8");
 
     if ($str != '') {
-        $str = str_replace('\\', '', $str); // temporarily forbiddenq
-        $str = str_replace('script', '', $str);
+        $str = strip_tags($text, '<p><a><style><div><marquee><span><s><u><b><i><br>');
         $sql = "INSERT INTO near(comments, data) VALUES ('$str', NOW())";
         $result = mysqli_query($link, $sql);
     }
