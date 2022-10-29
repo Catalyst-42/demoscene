@@ -20,8 +20,8 @@
     }
     mysqli_set_charset($link, "utf8");
 
+    $str = strip_tags($str, '<p><a><style><div><marquee><span><s><u><b><i><br>');
     if ($str != '') {
-        $str = strip_tags($text, '<p><a><style><div><marquee><span><s><u><b><i><br>');
         $sql = "INSERT INTO near(comments, data) VALUES ('$str', NOW())";
         $result = mysqli_query($link, $sql);
     }
