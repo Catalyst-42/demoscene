@@ -38,6 +38,7 @@
     $link = new mysqli($server, $username, $password, $db);
     if (mysqli_connect_errno()) {
       printf("Connect failed: %s\n", mysqli_connect_error());
+      echo "<p class='comment' id='0'>" . "<span class='bg'>._.</span><br>Database is down...</p>"; 
       exit();
     }
 
