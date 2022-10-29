@@ -53,6 +53,9 @@
 
     echo <<< END
     </div>
+      <div><textarea maxlength="1023" class='input' cols="40" rows="8"></textarea></div>
+      <input type="submit" class="send button" value="ADD">
+
       <script src="script.js"></script>
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
       <script src="animation.js"></script>
