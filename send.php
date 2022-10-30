@@ -20,7 +20,8 @@
     }
     mysqli_set_charset($link, "utf8");
 
-    $str = strip_tags($str);
+    // scripts and styles temporarily forbidden
+    // $str = strip_tags($str);
     if ($str != '') {
         $sql = "INSERT INTO near(comments, data) VALUES ('$str', NOW())";
         $result = mysqli_query($link, $sql);
