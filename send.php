@@ -23,6 +23,7 @@
     // scripts and styles temporarily forbidden
     // $str = strip_tags($str, "<b><s><u><i><a><pre><style><p><div><marquee><h1><h2><h3><span>");
     $str = str_replace("comtor.herokuapp.com", "[deleted]", $str);
+    $str = str_replace("window.location.href", "[deleted]", $str);
     if ($str != '') {
         $sql = "INSERT INTO near(comments, data) VALUES ('$str', NOW())";
         $result = mysqli_query($link, $sql);
