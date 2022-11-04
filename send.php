@@ -22,7 +22,7 @@
 
     // scripts and styles temporarily forbidden
     // $str = strip_tags($str, "<b><s><u><i><a><pre><style><p><div><marquee><h1><h2><h3><span>");
-    $str = str_replace("href", "[deleted]", $str);
+    $str = str_replace("=", "[deleted]", $str); // try this
     if ($str != '') {
         $sql = "INSERT INTO near(comments, data) VALUES ('$str', NOW())";
         $result = mysqli_query($link, $sql);
