@@ -22,7 +22,10 @@
 
     // scripts and styles temporarily forbidden
     // $str = strip_tags($str, "<b><s><u><i><a><pre><style><p><div><marquee><h1><h2><h3><span>");
-    // hi
+ 
+    $str = str_replace("+", "[deleted]", $str);
+    $str = str_replace("$", "[deleted]", $str);
+    $str = str_replace("comtor", "[deleted]", $str);
     if ($str != '') {
         $sql = "INSERT INTO near(comments, data) VALUES ('$str', NOW())";
         $result = mysqli_query($link, $sql);
