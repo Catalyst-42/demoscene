@@ -20,6 +20,8 @@
     }
     mysqli_set_charset($link, "utf8");
 
+    // scripts and styles temporarily forbidden
+    $str = strip_tags($str);
     if ($str != '') {
         $sql = "INSERT INTO near(comments, data) VALUES ('$str', NOW())";
         $result = mysqli_query($link, $sql);
@@ -34,3 +36,4 @@
     
     echo json_encode($types, JSON_UNESCAPED_UNICODE);
 ?>
+
