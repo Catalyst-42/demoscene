@@ -23,7 +23,10 @@
     // scripts and styles temporarily forbidden
     //$str = strip_tags($str, "<s><b><i><u>");
     if ($str != '') {
-        $sql = "INSERT INTO near(comments, data) VALUES ('$str', NOW())";
+        $sql = $link->prepare('INSERT INTO near(comments, data) VALUES (?, NOW())');
+        $sql->bind_param('s', $str);
+        $sql->execute();
+
         $result = mysqli_query($link, $sql);
     }
 
