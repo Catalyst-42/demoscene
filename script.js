@@ -1,6 +1,6 @@
 let xhttp = new XMLHttpRequest()
 let id = document.querySelectorAll(".comment:last-child")[document.querySelectorAll(".comment:last-child").length - 1].id
-let interval = setTimeout(update, 10000) 
+let interval = setTimeout(update, 5000) 
 let selected_theme = 'standart'
 console.log('max id: ' + id + '\ntheme: ' + selected_theme)
 
@@ -33,7 +33,7 @@ function update () {
 
 function addAnswer (data) {
     clearInterval(interval)
-    interval = setInterval(update, 10000)
+    interval = setInterval(update, 5000)
     data = JSON.parse(data)
     
     for (let i=0; i<data.length; i++) {
