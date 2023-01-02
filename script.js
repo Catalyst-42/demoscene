@@ -1,7 +1,7 @@
 let xhttp = new XMLHttpRequest()
-let id = document.querySelectorAll(".comment:last-child")[document.querySelectorAll(".comment:last-child").length - 1].id
+let id = document.querySelectorAll(".comment:last-child").length ? document.querySelectorAll(".comment:last-child")[document.querySelectorAll(".comment:last-child").length - 1].id : 0
 let interval = setTimeout(update, 5000) 
-let selected_theme = 'standart'
+let selected_theme = 'hacker'
 console.log('max id: ' + id + '\ntheme: ' + selected_theme)
 
 function setTheme(theme) {
@@ -12,12 +12,13 @@ function setTheme(theme) {
 
 xhttp.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
+        console.log(this.responseText);
         addAnswer(this.responseText);
     }
 }
 
 document.querySelector('.send').addEventListener('click', function () {    
-    xhttp.open("POST", "https://demoscene.herokuapp.com/send.php")
+    xhttp.open("POST", "http://192.168.0.106:8080/Demoscene/send.php")
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded")
     try { id = document.querySelectorAll(".comment:last-child")[document.querySelectorAll(".comment:last-child").length - 1].id } catch { id = 0 }
     xhttp.send('str=' + document.querySelector('.input').value + '&id=' + id)
@@ -25,7 +26,7 @@ document.querySelector('.send').addEventListener('click', function () {
 })
 
 function update () {
-    xhttp.open("POST", "https://demoscene.herokuapp.com/send.php")
+    xhttp.open("POST", "http://192.168.0.106:8080/Demoscene/send.php")
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded")
     try { id = document.querySelectorAll(".comment:last-child")[document.querySelectorAll(".comment:last-child").length - 1].id } catch { id = 0 }
     xhttp.send("&id=" + id)
@@ -44,3 +45,4 @@ function addAnswer (data) {
         document.body.querySelector('.comments').appendChild(p)
     }
 }
+

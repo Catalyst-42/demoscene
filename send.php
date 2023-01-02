@@ -2,14 +2,8 @@
     if (isset($_POST['str'])) { $str = $_POST['str']; } else { $str = ''; }
     $id = $_POST['id'];
 
-    $url = parse_url(getenv("CLEARDB_DATABASE_URL"));
-    $server = $url["host"];
-    $username = $url["user"];
-    $password = $url["pass"];
-    $db = substr($url["path"], 1);
-
     try {
-        $link = new mysqli($server, $username, $password, $db);
+        $link = new mysqli('127.0.0.1', 'u0_a614', 'root', 'near');
     } catch (PDOException $e){
         exit();
     }
@@ -30,9 +24,7 @@
         $result = mysqli_query($link, $sql);
     }
     
-    $sql = $link->prepare('SELECT comments, data, id FROM near WHERE id>? ORDER BY id');
-    $sql->bind_param('s', $id);
-    $sql->execute();
+    $sql = "SELECT comments, data, id FROM near WHERE id>'$id' ORDER BY id";
 
     $result = mysqli_query($link, $sql);
     $types = array();

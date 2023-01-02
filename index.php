@@ -15,7 +15,7 @@
       <link href="https://fonts.googleapis.com/css2?family=PT+Mono&display=swap" rel="stylesheet">
       
       <title>Demoscene</title>
-      <a class="link" style="top: 16px;" href='https://demoscene.herokuapp.com/information.html'><u>i</u></a>
+      <a class="link" style="top: 16px;" href='https://192.168.0.106/Demoscene/information.html'><u>i</u></a>
       <a class="link" style="top: 38px; font-size: 16px" onclick="toTop()"><u>&lt;</u></a>
       <a class="link" style="top: 64px; font-size: 16px" onclick="toBottom()"><u>&gt;</u></a>
   
@@ -25,17 +25,11 @@
       <a class="link hacker" style="top: 184px; font-size: 16px" onclick="setTheme('hacker')">H</a>
     </head>
     
-    <body class="standart">
+    <body class="hacker">
       <div class='comments' id='0'>
     END;
 
-    $url = parse_url(getenv("CLEARDB_DATABASE_URL"));
-    $server = $url["host"];
-    $username = $url["user"];
-    $password = $url["pass"];
-    $db = substr($url["path"], 1);
-
-    $link = new mysqli($server, $username, $password, $db);
+    $link = new mysqli('127.0.0.1', 'u0_a614', 'root', 'near');
     if (mysqli_connect_errno()) {
       printf("Connect failed: %s\n", mysqli_connect_error());
       echo "<p class='comment' id='0'><span class='bg'>._.</span><br>Database is down...</p>"; 
