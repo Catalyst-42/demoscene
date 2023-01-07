@@ -20,7 +20,7 @@ document.querySelector('.send').addEventListener('click', function () {
     xhttp.open("POST", "http://192.168.1.39:8080/Demoscene/send.php")
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded")
     try { id = document.querySelectorAll(".comment:last-child")[document.querySelectorAll(".comment:last-child").length - 1].id } catch { id = 0 }
-    xhttp.send('str=' + document.querySelector('.input').value + '&id=' + id)
+    xhttp.send('str=' + encodeURI(document.querySelector('.input').value) + '&id=' + id)
     document.querySelector('.input').value = ''
 })
 

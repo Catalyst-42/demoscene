@@ -1,5 +1,5 @@
 <?php
-    if (isset($_POST['str'])) { $str = $_POST['str']; } else { $str = ''; }
+    if (isset(urlencode($_POST['str']))) { $str = urlencode($_POST['str']); } else { $str = ''; }
     $id = $_POST['id'];
 
     try {
