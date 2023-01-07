@@ -17,16 +17,17 @@
 
     $str = str_replace(array('<', '>'), array('&lt;', '&gt'), $str);
     
-    $styles_from = array('[s]', '[/s]', '[u]', '[/u]', '[b]', '[/b]', '[/i]', '[i]');
-    $styles_to =   array('<s>', '</s>', '<u>', '</u>', '<b>', '</b>', '</i>', '<i>');
-    $str = str_replace($styles_from, $styles_to, $str);
+    $str = preg_replace('/\[(\/?([subi]))]/gm', '<${1}>')
+    // $styles_from = array('[s]', '[/s]', '[u]', '[/u]', '[b]', '[/b]', '[/i]', '[i]');
+    // $styles_to =   array('<s>', '</s>', '<u>', '</u>', '<b>', '</b>', '</i>', '<i>');
+    // $str = str_replace($styles_from, $styles_to, $str);
     
-    $styles_from = array('[rainbow]', '[magic]', '[silver]', '[jump]', '[shake]');
-    $styles_to =   array('<span class="rainbow-animated">', '<span class="magic-animated">', '<span class="silver-animated">', '<span class="jump-animated">', '<span class="shake-animated">');
-    $str = str_replace($styles_from, $styles_to, $str);
+    // $styles_from = array('[rainbow]', '[magic]', '[silver]', '[jump]', '[shake]');
+    // $styles_to =   array('<span class="rainbow-animated">', '<span class="magic-animated">', '<span class="silver-animated">', '<span class="jump-animated">', '<span class="shake-animated">');
+    // $str = str_replace($styles_from, $styles_to, $str);
 
-    $styles_from = array('[/rainbow]', '[/magic]', '[/silver]', '[/jump]', '[/shake]');
-    $str = str_replace($styles_from, '</span>', $str);
+    // $styles_from = array('[/rainbow]', '[/magic]', '[/silver]', '[/jump]', '[/shake]');
+    // $str = str_replace($styles_from, '</span>', $str);
 
     // [stroke] [/stroke]         -> [s] [/s]
     // [underlined] [/underlined] -> [u] [/u]
