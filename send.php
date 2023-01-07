@@ -17,7 +17,7 @@
 
     $str = str_replace(array('<', '>'), array('&lt;', '&gt'), $str);
     
-    $str = preg_replace('/\[(\/?([subi]))]/gm', '<${1}>')
+    $str = preg_replace('/\[(\/?([subi]))]/gm', '<${1}>');
     // $styles_from = array('[s]', '[/s]', '[u]', '[/u]', '[b]', '[/b]', '[/i]', '[i]');
     // $styles_to =   array('<s>', '</s>', '<u>', '</u>', '<b>', '</b>', '</i>', '<i>');
     // $str = str_replace($styles_from, $styles_to, $str);
