@@ -17,7 +17,8 @@
 
     $str = str_replace(array('<', '>'), array('&lt;', '&gt;'), $str);
     $str = preg_replace('/\[(\/?([subi]))]/', '<${1}>', $str);
-
+    $str = preg_replace('/\[((rainbow|magic|silver|jump|shake))]/', '<span style="${1}-animation">', $str);
+    $str = preg_replace('/\[(\/(rainbow|magic|silver|jump|shake))]/', '</span>', $str);
 
     // $styles_from = array('[s]', '[/s]', '[u]', '[/u]', '[b]', '[/b]', '[/i]', '[i]');
     // $styles_to =   array('<s>', '</s>', '<u>', '</u>', '<b>', '</b>', '</i>', '<i>');
