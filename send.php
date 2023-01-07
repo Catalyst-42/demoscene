@@ -14,7 +14,7 @@
     }
 
     mysqli_set_charset($link, "utf8");
-    $str = str_replace(array('<', '>', '+'), array('&lt;', '&gt;', '&plus;'), $str);
+    $str = str_replace(array('<', '>'), array('&lt;', '&gt;'), $str);
     
     // standard tags
     $str = preg_replace('/\[(\/?([subi]))]/', '<${1}>', $str);
