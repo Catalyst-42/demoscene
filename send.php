@@ -14,14 +14,13 @@
     }
 
     mysqli_set_charset($link, "utf8");
-
     $str = str_replace(array('<', '>'), array('&lt;', '&gt;'), $str);
     
     // standard tags
     $str = preg_replace('/\[(\/?([subi]))]/', '<${1}>', $str);
     
     // custom tags
-    $str = preg_replace('/\[((rainbow|magic|silver|jump|shake))]/', '<span style="${1}-animated">', $str);
+    $str = preg_replace('/\[((rainbow|magic|silver|jump|shake))]/', '<span class="${1}-animated">', $str);
     $str = preg_replace('/\[(\/(rainbow|magic|silver|jump|shake|))]/', '</span>', $str);
     
     // colors
