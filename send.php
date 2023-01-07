@@ -15,8 +15,29 @@
 
     mysqli_set_charset($link, "utf8");
 
-    // $str = strip_tags($str, "<span><s><u><b><i>");
     $str = str_replace(array('<', '>'), array('&lt;', '&gt'), $str);
+    
+    $styles_from = array('[s]', '[/s]', '[u]', '[/u]', '[b]', '[/b]', '[/i]', '[i]');
+    $styles_to =   array('<s>', '</s>', '<u>', '</u>', '<b>', '</b>', '</i>', '<i>');
+    $str = str_replace($styles_from, $styles_to), $str);
+    
+    $styles_from = array('[rainbow]', '[magic]', '[silver]', '[jump]', '[shake]');
+    $styles_to =   array('rainbow', 'magic', 'silver', 'jump', 'shake');
+    $str = str_replace($styles_from, '<span class="' . $styles_to / '-animated">'), $str);
+    
+    // [stroke] [/stroke]         -> [s] [/s]
+    // [underlined] [/underlined] -> [u] [/u]
+    // [bold] [/bold]             -> [b] [/b]
+    // [itailc] [/italic]         -> [i] [/i]
+    
+    // [rainbow] [/rainbow] 
+    // [magic] [/magic]
+    // [silver] [/silver]
+    // [jump] [/jump]
+    // [shake] [/shake]
+    
+    // [fff] [\]
+    // [ff00ff] [\]
 
     if ($str != '') {
         $sql = $link->prepare('INSERT INTO near(comments, data) VALUES (?, NOW())');
