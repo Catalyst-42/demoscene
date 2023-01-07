@@ -15,8 +15,8 @@
 
     mysqli_set_charset($link, "utf8");
 
-    $str = str_replace(array('<', '>'), array('&lt;', '&gt'), $str);
-    $str = preg_replace('/\[(\/?([subi]))]/gm', '<${1}>');
+    $str = str_replace(array('<', '>'), array('&lt;', '&gt;'), $str);
+    $str = preg_replace('/\[(\/?([subi]))]/gm', '<${1}>', $str);
 
 
     // $styles_from = array('[s]', '[/s]', '[u]', '[/u]', '[b]', '[/b]', '[/i]', '[i]');

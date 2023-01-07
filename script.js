@@ -34,6 +34,7 @@ function update () {
 function addAnswer (data) {
     clearInterval(interval)
     interval = setInterval(update, 5000)
+    console.log(data)
     data = JSON.parse(data)
     
     for (let i=0; i<data.length; i++) {
