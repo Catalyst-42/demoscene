@@ -15,7 +15,7 @@
       <link href="https://fonts.googleapis.com/css2?family=PT+Mono&display=swap" rel="stylesheet">
       
       <title>Demoscene</title>
-      <a class="link" style="top: 16px;" href='https://192.168.0.106/Demoscene/information.html'><u>i</u></a>
+      <a class="link" style="top: 16px;" href='https://192.168.1.39:8080/Demoscene/information.html'><u>i</u></a>
       <a class="link" style="top: 38px; font-size: 16px" onclick="toTop()"><u>&lt;</u></a>
       <a class="link" style="top: 64px; font-size: 16px" onclick="toBottom()"><u>&gt;</u></a>
   
@@ -23,7 +23,7 @@
       <a class="link dark" style="top: 136px; font-size: 16px" onclick="setTheme('dark')">D</a>
       <a class="link gradient" style="top: 160px; font-size: 16px" onclick="setTheme('gradient')">R</a>
       <a class="link hacker" style="top: 184px; font-size: 16px" onclick="setTheme('hacker')">H</a>
-      <a class="link black" style="top: 208px; font-size: 16px" onclick="setTheme('black')">D</a>
+      <a class="link black" style="top: 208px; font-size: 16px" onclick="setTheme('black')">B</a>
     </head>
     
     <body class="black">
