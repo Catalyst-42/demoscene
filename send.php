@@ -16,34 +16,16 @@
     mysqli_set_charset($link, "utf8");
 
     $str = str_replace(array('<', '>'), array('&lt;', '&gt;'), $str);
+    
+    // standard tags
     $str = preg_replace('/\[(\/?([subi]))]/', '<${1}>', $str);
-    $str = preg_replace('/\[((rainbow|magic|silver|jump|shake))]/', '<span style="${1}-animation">', $str);
-    $str = preg_replace('/\[(\/(rainbow|magic|silver|jump|shake))]/', '</span>', $str);
-
-    // $styles_from = array('[s]', '[/s]', '[u]', '[/u]', '[b]', '[/b]', '[/i]', '[i]');
-    // $styles_to =   array('<s>', '</s>', '<u>', '</u>', '<b>', '</b>', '</i>', '<i>');
-    // $str = str_replace($styles_from, $styles_to, $str);
     
-    // $styles_from = array('[rainbow]', '[magic]', '[silver]', '[jump]', '[shake]');
-    // $styles_to =   array('<span class="rainbow-animated">', '<span class="magic-animated">', '<span class="silver-animated">', '<span class="jump-animated">', '<span class="shake-animated">');
-    // $str = str_replace($styles_from, $styles_to, $str);
-
-    // $styles_from = array('[/rainbow]', '[/magic]', '[/silver]', '[/jump]', '[/shake]');
-    // $str = str_replace($styles_from, '</span>', $str);
-
-    // [stroke] [/stroke]         -> [s] [/s]
-    // [underlined] [/underlined] -> [u] [/u]
-    // [bold] [/bold]             -> [b] [/b]
-    // [itailc] [/italic]         -> [i] [/i]
+    // custom tags
+    $str = preg_replace('/\[((rainbow|magic|silver|jump|shake))]/', '<span style="${1}-animated">', $str);
+    $str = preg_replace('/\[(\/(rainbow|magic|silver|jump|shake|))]/', '</span>', $str);
     
-    // [rainbow] [/rainbow] 
-    // [magic] [/magic]
-    // [silver] [/silver]
-    // [jump] [/jump]
-    // [shake] [/shake]
-    
-    // [fff] [\]
-    // [ff00ff] [\]
+    // colors
+    $str = preg_replace('/\[(([0-9a-fA-F]{3}){1,2})\]/', '<span style="color: ${1}">', $str);
 
     if ($str != '') {
         $sql = $link->prepare('INSERT INTO near(comments, data) VALUES (?, NOW())');
