@@ -144,8 +144,8 @@ body.black .bg {
 }
 
 body.black textarea {
-    background-color: #40444b;
-    border: 1px solid black;
+    background-color: #000;
+    border: 1px solid #0f0;
     color: white;
 }
 
