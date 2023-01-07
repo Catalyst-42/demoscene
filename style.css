@@ -151,7 +151,7 @@ body.black textarea {
 }
 
 body.black textarea:focus {
-    outline: 1px solid #4CAF50;
+    outline: 1px solid #0f0;
 }
 
 body.black input {
@@ -160,9 +160,9 @@ body.black input {
     text-align: center;
     text-decoration: none;
     outline: none;
-    color: #fff;
-    background-color: #4CAF50;
-    border: 1px solid black;
+    color: #0f0;
+    background-color: black;
+    border: 1px solid #0f0;
 }
 
 /* Gradient theme */
