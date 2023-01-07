@@ -22,8 +22,8 @@
     $str = str_replace($styles_from, $styles_to, $str);
     
     $styles_from = array('[rainbow]', '[magic]', '[silver]', '[jump]', '[shake]');
-    $styles_to =   array('rainbow', 'magic', 'silver', 'jump', 'shake');
-    $str = str_replace($styles_from, '<span class="' . $styles_to . '-animated">', $str);
+    $styles_to =   array('<span class="rainbow-animated">', '<span class="magic-animated">', '<span class="silver-animated">', '<span class="jump-animated">', '<span class="shake-animated">');
+    $str = str_replace($styles_from, $styles_to, $str);
 
     $styles_from = array('[/rainbow]', '[/magic]', '[/silver]', '[/jump]', '[/shake]');
     $str = str_replace($styles_from, '</span>', $str);
