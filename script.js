@@ -21,6 +21,7 @@ document.querySelector('.send').addEventListener('click', function () {
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded")
     try { id = document.querySelectorAll(".comment:last-child")[document.querySelectorAll(".comment:last-child").length - 1].id } catch { id = 0 }
     xhttp.send('str=' + encodeURI(document.querySelector('.input').value) + '&id=' + id)
+    console.log("sended: " + 'str=' + encodeURI(document.querySelector('.input').value) + '&id=' + id)
     document.querySelector('.input').value = ''
 })
 
@@ -34,7 +35,7 @@ function update () {
 function addAnswer (data) {
     clearInterval(interval)
     interval = setInterval(update, 5000)
-    console.log(data)
+    console.log('get:' + data)
     data = JSON.parse(data)
     
     for (let i=0; i<data.length; i++) {
