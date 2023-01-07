@@ -4,34 +4,88 @@
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  -webkit-animation: rainbow 4s linear infinite;
-  animation: rainbow 4s linear infinite;
+
+  -webkit-animation: rainbow 3s linear infinite;
+  animation: rainbow 3s linear infinite;
+  
   animation-direction: reverse;
   margin: 0;
 }
 
 @keyframes rainbow {
-  0% { background-position: 0% 100% }
-  50% { background-position: 100% 200% }
-  100% { background-position: 200% 0% }
+  from { background-position: 0% center }
+  to { background-position: 200% center }
+}
+
+.magic-animated {
+  background: linear-gradient(to right, rgb(123, 31, 162), rgb(103, 58, 183), rgb(244, 143, 177), rgb(123, 31, 162));
+  background-size: 200%;
+
+  display: inline-block;
+  position: relative;
+
+  white-space: nowrap;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  -webkit-animation: magic 3s linear infinite;
+  animation: magic 3s linear infinite;
+}
+
+.magic-animated > .magic-star {
+  fill: rgb(123, 31, 162);
+  --size: clamp(0.4em, 0.6em, 0.8em);
+  
+  animation: scale 0.7s ease forwards;
+  display: block;
+
+  position: absolute;
+  left: var(--star-left);
+  top: var(--star-top);
+
+  height: var(--size);
+  width: var(--size);
+}
+
+.magic-animated > .magic-star > svg {
+  animation: rotate 1s linear infinite;
+  display: block;
+  opacity: 0.7;
+}
+
+@keyframes scale {
+  from, to { transform: scale(0); }
+  50% { transform: scale(1); }
+}
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(180deg); }
+}
+
+@keyframes magic {
+  from { background-position: 0% center; }
+  to { background-position: -200% center; }
 }
 
 .silver-animated {
   background: linear-gradient(to right, #fff, #000, #000, #fff);
-  background-size: 200% 200%;
+  background-size: 200%;
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  -webkit-animation: silver 2s linear infinite;
-  animation: silver 2s linear infinite;
+  
+  -webkit-animation: silver 3s linear infinite;
+  animation: silver 3s linear infinite;
+  
   animation-direction: reverse;
   margin: 0;
 }
 
 @keyframes silver {
-  0% { background-position: 0% 100% }
-  50% { background-position: 100% 200%}
-  100% { background-position: 200% 0%}
+  from { background-position: 0% center }
+  to { background-position: 200% center}
 }
 
 .shake-animated {
@@ -64,81 +118,4 @@
   0%   { transform: translateY(4px); }
   50%  { transform: translateY(-8px);}
   100%  { transform: translateY(4px);}
-}
-
-/* shake zone */
-.shake0 {
-  display: inline-block;
-  animation: shake0-animate 0.5s linear infinite;
-}
-
-@keyframes shake0-animate {
-  0% { transform: translate(1px, 1px) rotate(0deg); }
-  10% { transform: translate(-1px, -2px) rotate(-1deg); }
-  20% { transform: translate(-3px, 0px) rotate(1deg); }
-  30% { transform: translate(3px, 2px) rotate(0deg); }
-  40% { transform: translate(1px, -1px) rotate(1deg); }
-  50% { transform: translate(-1px, 2px) rotate(-1deg); }
-  60% { transform: translate(-3px, 1px) rotate(0deg); }
-  70% { transform: translate(3px, 1px) rotate(-1deg); }
-  80% { transform: translate(-1px, -1px) rotate(1deg); }
-  90% { transform: translate(1px, 2px) rotate(0deg); }
-  100% { transform: translate(1px, -2px) rotate(-1deg); }
-}
-
-.shake1 {
-  display: inline-block;
-  animation: shake1-animate 0.5s linear infinite;
-}
-
-@keyframes shake1-animate {
-  0% { transform: translate(1px, -1px) rotate(1deg); }
-  10% { transform: translate(3px, 2px) rotate(0deg); }
-  20% { transform: translate(-1px, -2px) rotate(-1deg); }
-  30% { transform: translate(3px, 1px) rotate(-1deg); }
-  40% { transform: translate(-3px, 0px) rotate(1deg); }
-  50% { transform: translate(1px, 2px) rotate(0deg); }
-  60% { transform: translate(-3px, 1px) rotate(0deg); }
-  70% { transform: translate(-1px, 2px) rotate(-1deg); }
-  8% { transform: translate(1px, 1px) rotate(0deg); }
-  90% { transform: translate(-1px, -1px) rotate(1deg); }
-  100% { transform: translate(1px, -2px) rotate(-1deg); }
-}
-
-.shake2 {
-  display: inline-block;
-  animation: shake2-animate 0.5s linear infinite;
-}
-
-@keyframes shake2-animate {
-  0% { transform: translate(3px, 1px) rotate(-1deg); }
-  10% { transform: translate(-1px, -2px) rotate(-1deg); }
-  20% { transform: translate(-1px, 2px) rotate(-1deg); }
-  30% { transform: translate(-3px, 0px) rotate(1deg); }
-  40% { transform: translate(3px, 2px) rotate(0deg); }
-  50% { transform: translate(1px, 1px) rotate(0deg); }
-  60% { transform: translate(1px, -1px) rotate(1deg); }
-  70% { transform: translate(1px, -2px) rotate(-1deg); }
-  80% { transform: translate(-3px, 1px) rotate(0deg); }
-  90% { transform: translate(-1px, -1px) rotate(1deg); }
-  100% { transform: translate(1px, 2px) rotate(0deg); }
-}
-
-.shake3 {
-  display: inline-block;
-  animation: shake3-animate 0.5s linear infinite;
-}
-
-@keyframes shake3-animate {
-  0% { transform: translate(3px, 1px) rotate(-1deg); }
-  10% { transform: translate(-1px, 2px) rotate(-1deg); }
-  20% { transform: translate(1px, 2px) rotate(0deg); }
-  30% { transform: translate(-3px, 0px) rotate(1deg); }
-  40% { transform: translate(3px, 2px) rotate(0deg); }
-  50% { transform: translate(-3px, 1px) rotate(0deg); }
-  60% { transform: translate(1px, -1px) rotate(1deg); }
-  70% { transform: translate(1px, 1px) rotate(0deg); }
-  80% { transform: translate(1px, -2px) rotate(-1deg); }
-  90% { transform: translate(-1px, -2px) rotate(-1deg); }
-  100% { transform: translate(-1px, -1px) rotate(1deg); }
 }

@@ -1,7 +1,7 @@
 let xhttp = new XMLHttpRequest()
 let id = document.querySelectorAll(".comment:last-child").length ? document.querySelectorAll(".comment:last-child")[document.querySelectorAll(".comment:last-child").length - 1].id : 0
 let interval = setTimeout(update, 5000) 
-let selected_theme = 'hacker'
+let selected_theme = 'black'
 console.log('max id: ' + id + '\ntheme: ' + selected_theme)
 
 function setTheme(theme) {
@@ -38,7 +38,7 @@ function addAnswer (data) {
     data = JSON.parse(data)
     
     for (let i=0; i<data.length; i++) {
-        let p = document.createElement('p')
+        let p = document.createElement('pre')
         p.classList.add('comment')
         p.id = data[i]['id']
         p.innerHTML =  "<span class='bg'>" + data[i]['data']  + "</span><br>" + data[i]['comments']

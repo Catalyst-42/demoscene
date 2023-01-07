@@ -23,16 +23,17 @@
       <a class="link dark" style="top: 136px; font-size: 16px" onclick="setTheme('dark')">D</a>
       <a class="link gradient" style="top: 160px; font-size: 16px" onclick="setTheme('gradient')">R</a>
       <a class="link hacker" style="top: 184px; font-size: 16px" onclick="setTheme('hacker')">H</a>
+      <a class="link black" style="top: 208px; font-size: 16px" onclick="setTheme('black')">D</a>
     </head>
     
-    <body class="hacker">
+    <body class="black">
       <div class='comments' id='0'>
     END;
 
     $link = new mysqli('127.0.0.1', 'u0_a614', 'root', 'near');
     if (mysqli_connect_errno()) {
       printf("Connect failed: %s\n", mysqli_connect_error());
-      echo "<p class='comment' id='0'><span class='bg'>._.</span><br>Database is down...</p>"; 
+      echo "<pre class='comment' id='0'><span class='bg'>._.</span><br>Database is down...</pre>"; 
       exit();
     }
     else {
@@ -41,7 +42,7 @@
       $result = mysqli_query($link, $sql);
   
       while ($row = mysqli_fetch_array($result)) {
-          echo "<p class='comment' id='" . $row['id'] . "'>" . "<span class='bg'>" . $row['data'] . '</span><br>'. $row['comments'] . "</p>"; 
+          echo "<pre class='comment' id='" . $row['id'] . "'>" . "<span class='bg'>" . $row['data'] . '</span><br>'. $row['comments'] . "</pre>"; 
       }
     }
 

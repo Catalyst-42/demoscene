@@ -5,6 +5,8 @@ body {
 }
 
 pre {
+    font-family: 'PT Mono', Courier, monospace;
+    font-weight: 500;
     font-size: 16px;
 }
 
@@ -110,6 +112,48 @@ body.dark textarea:focus {
 }
 
 body.dark input {
+    display: inline-block;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color: #4CAF50;
+    border: 1px solid black;
+}
+
+/* Black theme */
+a.black {
+    background-color: #000;
+    color: white;
+    border-radius: 1px;
+    border-color: black;
+}
+
+body.black a.black {
+    background: transparent;
+}
+
+body.black {
+    background: #000;
+    color: white;
+}
+
+body.black .bg {
+    background: black;
+}
+
+body.black textarea {
+    background-color: #40444b;
+    border: 1px solid black;
+    color: white;
+}
+
+body.black textarea:focus {
+    outline: 1px solid #4CAF50;
+}
+
+body.black input {
     display: inline-block;
     cursor: pointer;
     text-align: center;

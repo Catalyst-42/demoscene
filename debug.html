@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta content='width=device-width, initial-scale=1' name='viewport'/>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="effects.css">
+  <link rel="icon" type="image/png" href="./images/DemosceneBig.png">
+  <link rel="apple-touch-icon" type="image/png" href="./images/DemosceneBig.png">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=PT+Mono&display=swap" rel="stylesheet">
+  
+  <title>Demoscene</title>
+  <a class="link" style="top: 16px;" href='https://192.168.0.106/Demoscene/information.html'><u>i</u></a>
+  <a class="link" style="top: 38px; font-size: 16px" onclick="toTop()"><u>&lt;</u></a>
+  <a class="link" style="top: 64px; font-size: 16px" onclick="toBottom()"><u>&gt;</u></a>
+
+  <a class="link standart" style="top: 112px; font-size: 16px" onclick="setTheme('standart')">S</a>
+  <a class="link dark" style="top: 136px; font-size: 16px" onclick="setTheme('dark')">D</a>
+  <a class="link black" style="top: 136px; font-size: 16px" onclick="setTheme('black')">B</a>
+  <a class="link gradient" style="top: 160px; font-size: 16px" onclick="setTheme('gradient')">R</a>
+  <a class="link hacker" style="top: 184px; font-size: 16px" onclick="setTheme('hacker')">H</a>
+</head>
+
+<body class="black">
+  <div class='comments' id='0'>
+<p class='comment' id='5'><span class='bg'>2021-09-26 12:29:11</span><br>DEMOSCENE</p>
+
+<pre class='comment' id='5'><span class='bg'>2021-09-26 12:29:11</span><br>DEMOSCENE</pre>
+<pre class='comment' id='10'><span class='bg'>2023-01-02 17:09:30</span><br>union</pre>
+<pre class='comment' id='15'><span class='bg'>2023-01-02 17:09:30</span><br><s>Stroke</s>
+<u>Underlined</u>
+<b>Bold</b>
+<i>Italic</i>
+<span class="magic-animated">magic text</span>
+<span class="silver-animated">silver text</span>
+<span class="rainbow-animated">rainbow text</span>
+<span class="jump-animated">jumping text</span>
+<span class="shake-animated">shaking text</span>
+</pre>
+  </div>
+
+  <div><textarea maxlength="1023" class='input' cols="40" rows="8"></textarea></div>
+  <input type="submit" class="send button" value="ADD">
+  
+  <script src="script.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="animation.js"></script>
+</body>
+</html>
