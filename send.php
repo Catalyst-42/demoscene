@@ -23,8 +23,8 @@
     
     $styles_from = array('[rainbow]', '[magic]', '[silver]', '[jump]', '[shake]');
     $styles_to =   array('rainbow', 'magic', 'silver', 'jump', 'shake');
-    $str = str_replace($styles_from, '<span class="' . $styles_to / '-animated">'), $str);
-    
+    $str = str_replace($styles_from, '<span class="' . $styles_to . '-animated">'), $str);
+
     // [stroke] [/stroke]         -> [s] [/s]
     // [underlined] [/underlined] -> [u] [/u]
     // [bold] [/bold]             -> [b] [/b]
