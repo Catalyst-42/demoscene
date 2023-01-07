@@ -25,7 +25,7 @@
     $str = preg_replace('/\[(\/(rainbow|magic|silver|jump|shake|))]/', '</span>', $str);
     
     // colors
-    $str = preg_replace('/\[#(([0-9a-fA-F]{3}){1,2})\]/', '<span style="color: ${1};">', $str);
+    $str = preg_replace('/\[(#([0-9a-fA-F]{3}){1,2})\]/', '<span style="color: ${1};">', $str);
 
     if ($str != '') {
         $sql = $link->prepare('INSERT INTO near(comments, data) VALUES (?, NOW())');
