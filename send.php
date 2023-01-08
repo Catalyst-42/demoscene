@@ -31,10 +31,9 @@
     $sql = $link->prepare('SELECT comments, data, id FROM near WHERE id>? ORDER BY id;');
     $sql->bind_param('i', $id);
     $sql->execute();
-    $sql->fetch();
 
     $types = array();
-    while($row = mysqli_fetch_assoc($sql)) {
+    while($row = $sql->fetch_assoc()) {
         array_push($types, array('comments' => $row['comments'], 'data' => $row['data'], 'id' => $row['id']));
     }
 
