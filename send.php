@@ -29,7 +29,7 @@
         mysqli_query($link, $sql);
     }
     
-    $sql = $link-prepare('SELECT comments, data, id FROM near WHERE id>? ORDER BY id');
+    $sql = $link->prepare('SELECT comments, data, id FROM near WHERE id>? ORDER BY id');
     $sql->bind_param('i', $id);
     $sql->execute();
 
