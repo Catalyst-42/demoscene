@@ -26,14 +26,22 @@
         $sql->bind_param('s', $str);
         $sql->execute();
         
-        mysqli_query($link, $sql);
+        $result = mysqli_query($link, $sql);
     }
     
+    if (false === $result) {
+        printf("error 0000: %s\n", mysqli_error($con));
+    }
+
     $sql = $link->prepare('SELECT comments, data, id FROM near WHERE id>? ORDER BY id');
     $sql->bind_param('i', $id);
     $sql->execute();
 
     $result = mysqli_query($link, $sql);
+    if (false === $result) {
+        printf("error 9999: %s\n", mysqli_error($con));
+    }
+    
     $types = array();
     while($row = mysqli_fetch_assoc($result)) {
         array_push($types, array('comments' => $row['comments'], 'data' => $row['data'], 'id' => $row['id']));
