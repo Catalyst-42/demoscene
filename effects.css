@@ -18,7 +18,7 @@
   margin: 0;
 }
 
-/* magic (js needed)*/
+/* magic (js needed) */
 .magic-animated {
   background: linear-gradient(to right, rgb(123, 31, 162), rgb(103, 58, 183), rgb(244, 143, 177), rgb(123, 31, 162));
   background-size: 200%;
@@ -26,7 +26,7 @@
   display: inline-block;
   position: relative;
 
-  white-space: nowrap;
+  white-space: pre-wrap;
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;

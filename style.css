@@ -8,6 +8,8 @@ pre {
     font-family: 'PT Mono', Courier, monospace;
     font-weight: 500;
     font-size: 16px;
+
+    white-space: pre-wrap;
 }
 
 a.link, a.link:visited, a.link:hover, a.link:active {

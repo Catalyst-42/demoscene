@@ -29,7 +29,7 @@
         
         $sql->close();
     }
-    
+
     $sql = "SELECT comments, data, id FROM near WHERE id>$id ORDER BY id;";
     $result = mysqli_query($link, $sql);
     $types = array();
@@ -37,6 +37,5 @@
         array_push($types, array('comments' => $row['comments'], 'data' => $row['data'], 'id' => $row['id']));
     }
 
-    $link->close();
     echo json_encode($types, JSON_UNESCAPED_UNICODE);
 ?>
