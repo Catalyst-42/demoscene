@@ -31,7 +31,7 @@
     $sql = $link->prepare('SELECT comments, data, id FROM near WHERE id>? ORDER BY id;');
     $sql->bind_param('i', $id);
     $sql->execute();
-    $results = $sql->fetchAll();
+    $results = $sql->get_result()->fetch_all();
 
     $types = array();
     foreach ($results as $row) {
