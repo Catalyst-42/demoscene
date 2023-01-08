@@ -29,7 +29,7 @@
     <body class="black">
       <div class='comments' id='0'>
     END;
-
+ 
     try {
       $link = new mysqli('127.0.0.1', 'u0_a614', 'root', 'near');
 

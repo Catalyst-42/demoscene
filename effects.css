@@ -81,15 +81,9 @@
   margin: 0;
 }
 
-/* gold */
+/* bronze */
 .bronze-animated {
-  background: linear-gradient(to right,
-  #732100,
-    #ffdeca,
-    #ca7345,
-    #a14521,
-    #732100
-  );
+  background: linear-gradient(to right, #ffdeca, #ca7345, #a14521, #732100, #ffdeca);
   background-size: 200%;
   -webkit-background-clip: text;
   background-clip: text;
@@ -104,7 +98,7 @@
 
 /* silver */
 .silver-animated {
-  background: linear-gradient(to right, #fff, #555, #555, #fff);
+  background: linear-gradient(to right, #fff, #555, #555, #555, #fff);
   background-size: 200%;
   -webkit-background-clip: text;
   background-clip: text;
