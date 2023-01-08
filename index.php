@@ -30,13 +30,9 @@
       <div class='comments' id='0'>
     END;
 
-    $link = new mysqli('127.0.0.1', 'u0_a614', 'root', 'near');
-    if (mysqli_connect_errno()) {
-      printf("Connect failed: %s\n", mysqli_connect_error());
-      echo "<pre class='comment' id='0'><span class='bg'>._.</span><br>Database is down...</pre>"; 
-      exit();
-    }
-    else {
+    try {
+      $link = new mysqli('127.0.0.1', 'u0_a614', 'root', 'near');
+
       mysqli_set_charset($link, "utf8");
       $sql = 'SELECT comments, data, id FROM near ORDER BY id';
       $result = mysqli_query($link, $sql);
@@ -44,6 +40,9 @@
       while ($row = mysqli_fetch_array($result)) {
           echo "<pre class='comment' id='" . $row['id'] . "'>" . "<span class='bg'>" . $row['data'] . '</span><br>'. $row['comments'] . "</pre>"; 
       }
+    } 
+    catch (Exception $e){
+      echo "<pre class='comment' id='0'><span class='bg'>._.</span><br>Database is down...</pre>";
     }
 
     echo <<< END
