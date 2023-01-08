@@ -32,8 +32,6 @@
     $sql->bind_param('i', $id);
     $sql->execute();
     $sql->fetch();
-    
-    echo $sql;
 
     $types = array();
     while($row = mysqli_fetch_assoc($sql)) {
