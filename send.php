@@ -27,9 +27,7 @@
         $sql->execute();
         
         $result = mysqli_query($link, $sql);
-        if (false === $result) {
-            printf("error 0000: %s\n", mysqli_error($con));
-        }
+        $sql->close();
     }
     
     $sql = $link->prepare('SELECT comments, data, id FROM near WHERE id>? ORDER BY id');
@@ -37,9 +35,7 @@
     $sql->execute();
 
     $result = mysqli_query($link, $sql);
-    if (false === $result) {
-        printf("error 9999: %s\n", mysqli_error($con));
-    }
+    $sql->close();
     
     $types = array();
     while($row = mysqli_fetch_assoc($result)) {
