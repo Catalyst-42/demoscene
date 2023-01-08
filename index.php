@@ -38,11 +38,12 @@
       $result = mysqli_query($link, $sql);
   
       while ($row = mysqli_fetch_array($result)) {
-          echo "<pre class='comment' id='" . $row['id'] . "'>" . "<span class='bg'>" . $row['data'] . '</span><br>'. $row['comments'] . "</pre>"; 
+        echo "<pre class='comment' id='" . $row['id'] . "'>" . "<span class='bg'>" . $row['data'] . '</span><br>'. $row['comments'] . "</pre>";
       }
-    } 
-    catch (Exception $e){
+    }
+    catch (Exception $e) {
       echo "<pre class='comment' id='0'><span class='bg'>._.</span><br>Database is down...</pre>";
+      exit();
     }
 
     echo <<< END
