@@ -26,19 +26,18 @@
         $sql = $link->prepare('INSERT INTO near(comments, data) VALUES (?, NOW());');
         $sql->bind_param('s', $str);
         $sql->execute();
+        
+        $sql->close();
     }
     
-    $sql = $link->prepare('SELECT comments, data, id FROM near WHERE id>? ORDER BY id;');
-    $sql->bind_param('i', $id);
-    $sql->execute();
-    $results = $sql->get_result()->fetch_all();
-    
-    echo $results;
+    $sql = `SELECT comments, data, id FROM near WHERE id>$id ORDER BY id;`;
+    $result = mysqli_query($link, $sql);
 
     $types = array();
-    foreach ($results as $row) {
+    while($row = mysqli_fetch_assoc($result)) {
         array_push($types, array('comments' => $row['comments'], 'data' => $row['data'], 'id' => $row['id']));
     }
 
+    $link->close();
     echo json_encode($types, JSON_UNESCAPED_UNICODE);
 ?>
