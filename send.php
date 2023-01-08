@@ -33,7 +33,7 @@
     $sql->execute();
 
     $types = array();
-    while($row = $sql->fetch_assoc()) {
+    while($row = $sql->fetch()) {
         array_push($types, array('comments' => $row['comments'], 'data' => $row['data'], 'id' => $row['id']));
     }
 
