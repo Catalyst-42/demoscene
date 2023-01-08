@@ -22,7 +22,7 @@
     $str = preg_replace('/\[(#([0-9a-fA-F]{3}){1,2})\]/', '<span style="color: ${1};">', $str);
 
     if ($str != '') {
-        $sql = $link->prepare('INSERT INTO near(comments, data) VALUES (?, NOW())');
+        $sql = $link->prepare('INSERT INTO near(comments, data) VALUES (?, NOW());');
         $sql->bind_param('s', $str);
         $sql->execute();
         
@@ -30,7 +30,7 @@
         $sql->close();
     }
     
-    $sql = $link->prepare('SELECT comments, data, id FROM near WHERE id>? ORDER BY id');
+    $sql = $link->prepare('SELECT comments, data, id FROM near WHERE id>? ORDER BY id;');
     $sql->bind_param('i', $id);
     $sql->execute();
 
