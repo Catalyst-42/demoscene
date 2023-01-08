@@ -33,7 +33,7 @@
     $sql->execute();
 
     $types = array();
-    while($row = $sql->get_result()->fetch_assoc()) {
+    while($row = $sql->fetch(PDO::FETCH_ASSOC)) {
         array_push($types, array('comments' => $row['comments'], 'data' => $row['data'], 'id' => $row['id']));
     }
 
