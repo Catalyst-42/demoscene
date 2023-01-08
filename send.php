@@ -27,12 +27,11 @@
         $sql->execute();
         
         $result = mysqli_query($link, $sql);
+        if (false === $result) {
+            printf("error 0000: %s\n", mysqli_error($con));
+        }
     }
     
-    if (false === $result) {
-        printf("error 0000: %s\n", mysqli_error($con));
-    }
-
     $sql = $link->prepare('SELECT comments, data, id FROM near WHERE id>? ORDER BY id');
     $sql->bind_param('i', $id);
     $sql->execute();
