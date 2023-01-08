@@ -32,6 +32,8 @@
     $sql->bind_param('i', $id);
     $sql->execute();
     $results = $sql->get_result()->fetch_all();
+    
+    echo $results;
 
     $types = array();
     foreach ($results as $row) {
