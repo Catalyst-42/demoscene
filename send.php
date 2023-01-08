@@ -30,9 +30,8 @@
         $sql->close();
     }
     
-    $sql = `SELECT comments, data, id FROM near WHERE id>$id ORDER BY id;`;
+    $sql = "SELECT comments, data, id FROM near WHERE id>$id ORDER BY id;";
     $result = mysqli_query($link, $sql);
-
     $types = array();
     while($row = mysqli_fetch_assoc($result)) {
         array_push($types, array('comments' => $row['comments'], 'data' => $row['data'], 'id' => $row['id']));
