@@ -1,6 +1,6 @@
 <?php
     if (isset($_POST['str'])) { $str = $_POST['str']; } else { $str = ''; }
-    $id = $_POST['id'];
+    $id = (int) $_POST['id'];
 
     try {
         $link = new mysqli('127.0.0.1', 'u0_a614', 'root', 'near');
@@ -25,11 +25,13 @@
         $sql = $link->prepare('INSERT INTO near(comments, data) VALUES (?, NOW())');
         $sql->bind_param('s', $str);
         $sql->execute();
-
-        $result = mysqli_query($link, $sql);
+        
+        mysqli_query($link, $sql);
     }
     
-    $sql = "SELECT comments, data, id FROM near WHERE id>'$id' ORDER BY id";
+    $sql = $link-prepare("SELECT comments, data, id FROM near WHERE id>? ORDER BY id");
+    $sql->bind_param('i', $id);
+    $sql->execute();
 
     $result = mysqli_query($link, $sql);
     $types = array();
