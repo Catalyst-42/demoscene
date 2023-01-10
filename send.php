@@ -17,8 +17,8 @@
         $str = preg_replace('/\[(\/?([subi]))]/', '<${1}>', $str);
         
         // custom tags
-        $str = preg_replace('/\[((rainbow|magic|silver|jump|shake))]/', '<span class="${1}-animated">', $str);
-        $str = preg_replace('/\[(\/(rainbow|magic|silver|jump|shake|))]/', '</span>', $str);
+        $str = preg_replace('/\[((rainbow|magic|blink|gold|bronze|silver|jump|shake))]/', '<span class="${1}-animated">', $str);
+        $str = preg_replace('/\[(\/(rainbow|magic|blink|gold|bronze|silver|jump|shake|))]/', '</span>', $str);
         
         // colors
         $str = preg_replace('/\[(#([0-9a-fA-F]{3}){1,2})\]/', '<span style="color: ${1};">', $str);

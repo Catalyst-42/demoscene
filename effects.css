@@ -25,14 +25,15 @@
 
   display: inline-block;
   position: relative;
-
+  
   white-space: pre-wrap;
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-
+  
   -webkit-animation: move-bg 3s linear infinite;
   animation: move-bg 3s linear infinite;
+  animation-direction: reverse;
 }
 
 .magic-animated > .magic-star {
@@ -40,7 +41,8 @@
   --size: clamp(0.4em, 0.6em, 0.8em);
   
   animation: magic-scale 0.7s ease forwards;
-  display: block;
+  
+  display: inline-block;
 
   position: absolute;
   left: var(--star-left);
@@ -64,6 +66,18 @@
 @keyframes magic-rotate {
   from { transform: rotate(0deg); }
   to { transform: rotate(180deg); }
+}
+
+/* blink */
+.blink-animated {
+  -webkit-animation: blink 1s linear infinite;
+  animation: blink 1s steps(1, end) infinite;
+  
+  margin: 0;
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
 }
 
 /* gold */
