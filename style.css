@@ -12,6 +12,10 @@ pre {
     white-space: pre-wrap;
 }
 
+a {
+    color: #6D43A6;
+}
+
 a.link, a.link:visited, a.link:hover, a.link:active {
     color: inherit;
 }
