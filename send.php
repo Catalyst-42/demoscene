@@ -3,7 +3,7 @@
     $id = (int) $_POST['id'];
 
     try {
-        $link = new mysqli('127.0.0.1', 'u0_a614', 'root', 'near');
+        $link = new mysqli(getenv('DATABASE_URL'), getenv('USER'), getenv('PASSWORD'), 'near');
     } catch (Exception $e) {
         exit();
     }
