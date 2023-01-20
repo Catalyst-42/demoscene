@@ -38,17 +38,19 @@
       while ($row = mysqli_fetch_array($result)) {
         echo "<pre class='comment' id='" . $row['id'] . "'>" . "<span class='bg'>" . $row['data'] . '</span><br>'. $row['comments'] . "</pre>";
       }
+
+      echo <<< END
+      </div>
+      <div><textarea spellcheck="false" maxlength="1023" class='input' cols="40" rows="8"></textarea></div>
+      <input type="submit" class="send button" value="ADD">
+      END;
     }
     catch (Exception $e) {
-      echo "<pre class='comment' id='0'><span class='bg'>._.</span><br>Database is down...</pre>";
+      echo "<pre class='comment' id='0'><span class='bg'>._.</span><br>Database is down...</pre> </div>";
       exit();
     }
 
     echo <<< END
-    </div>
-      <div><textarea spellcheck="false" maxlength="1023" class='input' cols="40" rows="8"></textarea></div>
-      <input type="submit" class="send button" value="ADD">
-      
       <script src="script.js"></script>
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
       <script src="animation.js"></script>
