@@ -47,7 +47,6 @@
     }
     catch (Exception $e) {
       echo "<pre class='comment' id='0'><span class='bg'>._.</span><br>Database is down...</pre> </div>";
-      exit();
     }
 
     echo <<< END
