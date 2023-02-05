@@ -1,57 +1,48 @@
-
-function toTop() {
-  $("html, body").scrollTop(1)
-}
-
-function toBottom() {
-  $("html, body").scrollTop($(document).height())
-}
-
-// animate magic star
-const rand = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min
-const animate = star => {
-  star.style.setProperty("--star-left", `${rand(0, 100)}%`)
-  star.style.setProperty("--star-top", `${rand(-10, 90)}%`)
-  
-  star.style.animation = "none"
-  star.offsetHeight
-  star.style.animation = ""
-}
-
 function applyAnimations() {
   // apply shake effect
   $(".shake-animated").not(".compiled").each(function() {
-      $(this).addClass("compiled")
-      text = $(this).text().split("")
-      modified_text = ""
+    $(this).addClass("compiled")
+    let text = $(this).text().split("")
+    let modified_text = ""
 
-      for (var i = 0; i < text.length; i++) {
-          if (text[i] === ' ' & text[i-1] != ' ') {
-              modified_text += '<pre style="margin: 0"> </pre>'
-          } else {
-              modified_text += `<span class="shake" style="animation-delay: ${-Math.random()}s;">${text[i]}</span>`
-          }
+    for (var i = 0; i < text.length; i++) {
+      if (text[i] === ' ' & text[i-1] != ' ') {
+        modified_text += '<pre style="margin: 0"> </pre>'
+      } else {
+        modified_text += `<span class="shake" style="animation-delay: ${-Math.random()}s;">${text[i]}</span>`
       }
-      $(this).html(modified_text)
+    }
+    $(this).html(modified_text)
   })
 
   // apply jump effect
   $(".jump-animated").not(".compiled").each(function() {
     $(this).addClass("compiled")
       let jump_index = 0
-      text = $(this).text().split("")
-      modified_text = ""
+      let text = $(this).text().split("")
+      let modified_text = ""
 
       for (var i = 0; i < text.length; i++) {
-          jump_index += 0.05
-          if (text[i] === ' ' & text[i-1] != ' ') {
-              modified_text += '<pre style="margin: 0"> </pre>'
-          } else {
-              modified_text += `<span class="jump" style="animation-delay: ${jump_index}s;">${text[i]}</span>`
-          }
+        jump_index += 0.05
+        if (text[i] === ' ' & text[i-1] != ' ') {
+          modified_text += '<pre style="margin: 0"> </pre>'
+        } else {
+          modified_text += `<span class="jump" style="animation-delay: ${jump_index}s;">${text[i]}</span>`
+        }
       }
       $(this).html(modified_text)
   })
+  
+  // animate magic star
+  const rand = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min
+  const animate = star => {
+    star.style.setProperty("--star-left", `${rand(0, 100)}%`)
+    star.style.setProperty("--star-top", `${rand(-10, 90)}%`)
+    
+    star.style.animation = "none"
+    star.offsetHeight
+    star.style.animation = ""
+  }
   
   // apply magic effect
   $(".magic-animated").not(".compiled").each(function() {
@@ -70,7 +61,7 @@ function applyAnimations() {
   })
 }
 
-// apply new effects every 10 seconds (if new content generated)
+// apply new effects every 5 seconds (if new content generated)
 $(document).ready(function() {
   applyAnimations()
   setInterval(applyAnimations, 5000)

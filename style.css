@@ -1,130 +1,142 @@
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-    display: block;    
-    font-family: 'PT Mono', Courier, monospace;
-    font-weight: 500;
+  font-family: 'PT Mono', Courier, monospace;
+  display: block;    
+  font-weight: 500;
 }
 
 pre {
-    font-family: 'PT Mono', Courier, monospace;
-    font-weight: 500;
-    font-size: 16px;
+  font-family: 'PT Mono', Courier, monospace;
+  font-weight: 500;
+  font-size: 16px;
 
-    white-space: pre-wrap;
+  white-space: pre-wrap;
 }
 
 a {
-    color: #6D43A6;
+  color: #6D43A6;
 }
 
 a.link, a.link:visited, a.link:hover, a.link:active {
-    color: inherit;
+  color: inherit;
 }
 
 textarea {
-    display: block;
-    flex-direction: column;
-    flex-wrap: wrap;
+  max-width: calc(100% - 8px);
+  
+  display: block;
+  flex-direction: column;
+  flex-wrap: wrap;
 }
 
 input, textarea {
-    display: flex;
-    flex-wrap: wrap;
-    font-size: medium;
-    
-    border: none;
-    text-align: left;
-    text-decoration: none;
-    display: inline-block;
-    
-    font-family: 'PT Mono', Courier, monospace;
-    font-weight: 500;
-    
+  display: flex;
+  flex-wrap: wrap;
+  font-size: medium;
+  
+  border: none;
+  text-align: left;
+  text-decoration: none;
+  display: inline-block;
+  
+  font-family: 'PT Mono', Courier, monospace;
+  font-weight: 500;
+}
+
+img {
+  vertical-align: middle;
+  border-radius: 4px;
+  max-width: 50vw;
+  max-height: 50vh;
 }
 
 .comment { padding: 2px; }
 
 .link {
-    text-decoration: none;
+  text-decoration: none;
 
-    position: fixed;
-    float: right;
-    right: 16px; 
+  position: fixed;
+  float: right;
+  right: 16px; 
 }
 
 .link:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 /* Standart theme */
 a.standart {
-    background-color: #fff;
-    color: black;
-    border-radius: 1px;
-    border-color: black;
+  background-color: white;
+  color: black;
+  border-radius: 1px;
+  border-color: black;
 }
 
 body.standart a.standart {
-    background: transparent;
+  background: transparent;
 }
 
 body.standart {
-    background-color: #fff !important;
-    color: black;
+  background-color: white !important;
+  color: black;
 }
 
 body.standart .bg {
-    background-color: #aaa;;
+  background-color: #aaa;
 }
 
 body.standart input, body.standart textarea {
-    background-color: #fff;
-    color: black;
-    border: 1px solid black;
+  background-color: white;
+  color: black;
+  border: 1px solid black;
 }
 
 body.standart textarea:focus {
-    outline: none;
+  outline: none;
 }
 
 /* Black theme */
 a.black {
-    background-color: #000;
-    color: white;
-    border-radius: 1px;
-    border-color: black;
+  background-color: black;
+  color: white;
+  border-radius: 1px;
+  border-color: black;
 }
 
 body.black a.black {
-    background: transparent;
+  background: transparent;
 }
 
 body.black {
-    background: #000;
-    color: white;
+  background: black;
+  color: white;
 }
 
 body.black .bg {
-    background: #000;
-    color: #0f0;
+  background: black;
+  color: #0f0;
 }
 
 body.black textarea {
-    background-color: #000;
-    border: 1px solid #0f0;
-    color: white;
+  background-color: black;
+  border: 1px solid #0f0;
+  color: white;
 }
 
 body.black textarea:focus {
-    outline: 1px solid #0f0;
+  outline: 1px solid #0f0;
 }
 
 body.black input {
-    display: inline-block;
-    cursor: pointer;
-    text-align: center;
-    text-decoration: none;
-    outline: none;
-    color: #fff;
-    background-color: black;
-    border: 1px solid #0f0;
+  display: inline-block;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: white;
+  background-color: black;
+  border: 1px solid #0f0;
 }

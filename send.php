@@ -13,21 +13,21 @@
     if ($str != '') {
         $str = str_replace(array('<', '>'), array('&lt;', '&gt;'), $str);
         
-        // standard tags
-        $str = preg_replace('/\[(\/?([subi]))]/', '<${1}>', $str);
+        // custom tags, colors, standard tags
+        $str = preg_replace('/\[(rainbow|magic|blink|gold|bronze|silver|jump|shake)]((.|\n)+?)\[\/\]/', '<span class="${1}-animated">${2}</span>', $str);
+        $str = preg_replace('/\[#([0-9a-fA-F]{3}){1,2}\]((.|\n)+?)\[\/\]/', '<span style="color: #${1}">${2}</span>', $str);
+        $str = preg_replace('/\[([subi])]((.|\n)+?)\[\/\1\]/', '<${1}>${2}</${1}>', $str);
         
-        // custom tags
-        $str = preg_replace('/\[((rainbow|magic|blink|gold|bronze|silver|jump|shake))]/', '<span class="${1}-animated">', $str);
-        $str = preg_replace('/\[(\/(rainbow|magic|blink|gold|bronze|silver|jump|shake|))]/', '</span>', $str);
-        
-        // colors
-        $str = preg_replace('/\[(#([0-9a-fA-F]{3}){1,2})\]/', '<span style="color: ${1};">', $str);
+        // non empty or image
+        if (trim(strip_tags($str)) != '') {
+            $str = preg_replace('/\[img\](.+?)\[\/img\]/', '<img src="${1}" alt="image"></img>', $str);
 
-        $sql = $link->prepare('INSERT INTO near(comments, data) VALUES (?, NOW());');
-        $sql->bind_param('s', $str);
-        $sql->execute();
+            $sql = $link->prepare('INSERT INTO near(comments, data) VALUES (?, NOW());');
+            $sql->bind_param('s', $str);
+            $sql->execute();
         
-        $sql->close();
+            $sql->close();
+        }
     }
 
     $sql = "SELECT comments, data, id FROM near WHERE id>$id ORDER BY id;";
