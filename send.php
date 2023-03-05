@@ -20,7 +20,7 @@
         
         // non empty or image
         if (trim(strip_tags($str)) != '') {
-            $str = preg_replace('/\[img\](.+?)\[\/img\]/', '<img src="${1}" alt="image"></img>', $str);
+            $str = preg_replace('/\[img\]([^"]+?)\[\/img\]/', '<img src="${1}"></img>', $str);
 
             $sql = $link->prepare('INSERT INTO near(comments, data) VALUES (?, NOW());');
             $sql->bind_param('s', $str);
