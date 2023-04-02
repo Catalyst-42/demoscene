@@ -26,6 +26,10 @@
 Вы можете вставлять в комментарии модификаторы текста.
 Модификаторы, которые не конфликтуют с анимациями, можно комбинировать. (Модификаторы из разных групп)
 
+Обратите <span style="color: #FF000F">внимание</span>, что все пробелы учитываются! Так что правильное использование тегов в контексте будет примерно вот таким:
+
+Ничего [u]себе[/u], какой [#8CE10B][jump]странный[/][/] [#555]сайт[/]...  
+<pre class='comment'><span class="bg">Теги</span>
 Стандартные:
 <s>Stroke</s>     <- [s] <span style="color: gray">Stroke</span> [/s]
 <u>Underlined</u> <- [u] <span style="color: gray">Underlined</span> [/u]
@@ -40,7 +44,7 @@
 <span class="bronze-animated">bronze</span>     <- [bronze] <span style="color: gray">bronze</span> [/]
 <span class="silver-animated">silver</span>     <- [silver] <span style="color: gray">silver</span> [/]
 
-<span class="blink-animated">blink</span>      <- [blink] <span style="color: gray">blinking</span> [/]
+<span class="blink-animated">blinking</span>   <- [blink] <span style="color: gray">blinking</span> [/]
 <span class="jump-animated">jumping</span>    <- [jump] <span style="color: gray">jumping</span> [/]
 <span class="shake-animated">shaking</span>    <- [shake] <span style="color: gray">shaking</span> [/]
 
@@ -52,7 +56,6 @@
 <img src="./images/DemosceneLogo.png" alt="logo" style="height: 16px; width: 16px;">         <- [img] <span style="color: gray">./images/DemosceneLogo.png</span> [/img]
 </pre>
   </div>
-
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="animation.js"></script>
 </body>
