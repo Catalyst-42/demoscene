@@ -11,3 +11,6 @@
 
 Итоги первого сезона на [webarchive](https://web.archive.org/web/20221130191402/https://demoscene.herokuapp.com/)  
 Второй сезон на [сайте](http://f0749945.xsph.ru/Demoscene/)
+
+Статистика за 84 недели:
+![stats_week_84](./images/StatsW84.png)
