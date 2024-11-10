@@ -1,6 +1,6 @@
-html {
+/* html {
   scroll-behavior: smooth;
-}
+} */
 
 body {
   font-family: 'PT Mono', Courier, monospace;
@@ -24,14 +24,6 @@ a.link, a.link:visited, a.link:hover, a.link:active {
   color: inherit;
 }
 
-textarea {
-  max-width: calc(100% - 8px);
-  
-  display: block;
-  flex-direction: column;
-  flex-wrap: wrap;
-}
-
 input, textarea {
   display: flex;
   flex-wrap: wrap;
@@ -46,11 +38,20 @@ input, textarea {
   font-weight: 500;
 }
 
+textarea {
+  display: block;
+  flex-direction: column;
+  flex-wrap: wrap;
+
+  max-width: calc(100% - 8px);
+  margin-bottom: 16px;
+}
+
 img {
   vertical-align: middle;
   border-radius: 4px;
   max-width: 50vw;
-  max-height: 50vh;
+  height: 50vh;
 }
 
 .comment { padding: 2px; }

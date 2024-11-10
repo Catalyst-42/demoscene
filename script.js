@@ -40,7 +40,7 @@ function addAnswer(data) {
     $('.comments').append(p)
   }
 }
-
+ 
 // update and post comments
 var xhttp = new XMLHttpRequest()
 xhttp.onreadystatechange = function () {
