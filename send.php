@@ -14,9 +14,9 @@
         $str = str_replace(array('<', '>'), array('&lt;', '&gt;'), $str);
         
         // custom tags, colors, standard tags
-        $str = preg_replace('/\[(rainbow|magic|blink|gold|bronze|silver|jump|shake)]((.|\n)+?)\[\/\]/', '<span class="${1}-animated">${2}</span>', $str);
-        $str = preg_replace('/\[#(([0-9a-fA-F]{3}){1,2})\]((.|\n)+?)\[\/\]/', '<span style="color: #${1}">${3}</span>', $str);
-        $str = preg_replace('/\[([subi])]((.|\n)+?)\[\/\1\]/', '<${1}>${2}</${1}>', $str);
+        $str = preg_replace('/\[(rainbow|magic|blink|gold|bronze|silver|jump|shake)]((?:.|\n)+?)\[\/\]/', '<span class="${1}-animated">${2}</span>', $str);
+        $str = preg_replace('/\[#((?:[0-9a-fA-F]{3}){1,2})\]((?:.|\n)+?)\[\/\]/', '<span style="color: #${1}">${2}</span>', $str);
+        $str = preg_replace('/\[([subi])]((?:.|\n)+?)\[\/\1\]/', '<${1}>${2}</${1}>', $str);
         
         // non empty or image
         if (trim(strip_tags($str)) != '') {
