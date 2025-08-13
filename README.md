@@ -11,7 +11,7 @@
 Первый сезон проекта существовал на Heroku до того, как они отключили бесплатные аккаунты, второй сезон пока находится на Sprinthost. 
 
 Итоги первого сезона на [webarchive](https://web.archive.org/web/20221130191402/https://demoscene.herokuapp.com/)  
-Второй сезон на [сайте](http://f0749945.xsph.ru/Demoscene/)
+Второй сезон на [сайте](https://tauceti.nhost.me/demoscene/)
 
 Статистика за 84 недели:  
 
