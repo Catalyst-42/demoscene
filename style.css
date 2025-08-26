@@ -24,16 +24,16 @@ a.link, a.link:visited, a.link:hover, a.link:active {
   color: inherit;
 }
 
-input, textarea {
+input, textarea, button {
   display: flex;
   flex-wrap: wrap;
   font-size: medium;
-  
+
   border: none;
   text-align: left;
   text-decoration: none;
   display: inline-block;
-  
+
   font-family: 'PT Mono', Courier, monospace;
   font-weight: 500;
 }
@@ -89,7 +89,9 @@ body.standart .bg {
   background-color: #aaa;
 }
 
-body.standart input, body.standart textarea {
+body.standart input,
+body.standart button,
+body.standart textarea {
   background-color: white;
   color: black;
   border: 1px solid black;
@@ -131,7 +133,8 @@ body.black textarea:focus {
   outline: 1px solid #0f0;
 }
 
-body.black input {
+body.black input,
+body.black button {
   display: inline-block;
   cursor: pointer;
   text-align: center;

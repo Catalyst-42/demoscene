@@ -22,7 +22,7 @@ for insertion in insertions:
         r"(\d+),(.+),'(\d{4}-\d{2}-\d{2}\s\d{2}:\d{2}:\d{2})'",
         insertion
     )[0]
-    
+
     comments.append({
         "id": int(comment_id),
         "comment": comment,
