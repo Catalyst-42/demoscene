@@ -8,7 +8,7 @@
 
 ![modifiers](./images/DemosceneModifiers.png)
 
-Первый сезон проекта существовал на Heroku до того, как они отключили бесплатные аккаунты, второй сезон пока находится на Sprinthost. 
+Первый сезон проекта существовал на Heroku до того, как они отключили бесплатные аккаунты, второй сезон долго находился на Sprinthost пока не переехал на Nanohost. 
 
 Итоги первого сезона на [webarchive](https://web.archive.org/web/20221130191402/https://demoscene.herokuapp.com/)  
 Второй сезон на [сайте](https://tauceti.nhost.me/demoscene/)
