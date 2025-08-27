@@ -1,36 +1,19 @@
 import matplotlib.pyplot as plt
-
-from re import findall
-from math import ceil
-from datetime import datetime
 from matplotlib.dates import DateFormatter
 
-# Dump sql from format
-# INSERT INTO near VALUES (id, 'text', 'date');
-# INSERT INTO near VALUES (id, 'text', 'date');
-# ...
+from math import ceil
+from json import load
+from datetime import datetime
 
-comments = []
+# JSON Dump: MySQL Workbench > SELECT * ... > Export JSON
+comments = load(open("dump.json"))
 
-insertions = findall(
-    r"INSERT INTO near VALUES (\(.+)\)",
-    open("dump.sql", "r").read()
-)
-
-for insertion in insertions:
-    comment_id, comment, date = findall(
-        r"(\d+),(.+),'(\d{4}-\d{2}-\d{2}\s\d{2}:\d{2}:\d{2})'",
-        insertion
-    )[0]
-
-    comments.append({
-        "id": int(comment_id),
-        "comment": comment,
-        "date": datetime.strptime(date, "%Y-%m-%d %H:%M:%S"),
-    })
+# Parse date fields
+for i in range(len(comments)):
+    comments[i]["data"] = datetime.strptime(comments[i]["data"], "%Y-%m-%d %H:%M:%S")
 
 # Get comment history
-total_weeks = ceil((comments[-1]["date"] - comments[0]["date"]).days / 7)
+total_weeks = ceil((comments[-1]["data"] - comments[0]["data"]).days / 7)
 comments_history = {
     "x": [],
     "y": [],
@@ -39,9 +22,10 @@ comments_history = {
 total = 0
 for comment in comments:
     total += 1
-    comments_history["x"].append(comment["date"])
+    comments_history["x"].append(comment["data"])
     comments_history["y"].append(total)
 
+print(f"Всего недель: {total_weeks}")
 print(f"Всего комментариев: {total:,}")
 print(f"Последний id: {comments[-1]["id"]:,}")
 
