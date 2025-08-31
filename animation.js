@@ -1,3 +1,5 @@
+const text_lendth_limit = 144
+
 $.fn.isInViewport = function() {
   let elementTop = $(this).offset().top
   let elementBottom = elementTop + $(this).outerHeight()
@@ -17,6 +19,10 @@ function applyAnimations() {
     let text = $(this).text().split("")
     let modified_text = ""
 
+    if (text.length > text_lendth_limit) {
+      return;
+    }
+
     for (var i = 0; i < text.length; i++) {
       if (text[i] === ' ' & text[i-1] != ' ') {
         modified_text += '<pre style="margin: 0"> </pre>'
@@ -35,6 +41,10 @@ function applyAnimations() {
     let jump_index = 0
     let text = $(this).text().split("")
     let modified_text = ""
+
+    if (text.length > text_lendth_limit) {
+      return;
+    }
 
     for (var i = 0; i < text.length; i++) {
       jump_index += 0.05
