@@ -1,7 +1,7 @@
 <?php
 $bad_apple = array(
-    "start" => 102096,
-    "end" => 108698,
+  "start" => 102096,
+  "end" => 108698,
 );
 
 try {

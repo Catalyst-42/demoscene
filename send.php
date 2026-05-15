@@ -1,6 +1,6 @@
 <?php
 if (isset($_POST['str'])) { $str = $_POST['str']; } else { $str = ''; }
-$id = (int) $_POST['id'];
+$id = isset($_POST['id']) ? (int) $_POST['id'] : 0;
 
 try {
   $link = new mysqli(getenv('DEMOSCENE_DATABASE_URL'), getenv('DEMOSCENE_USER'), getenv('DEMOSCENE_PASSWORD'), 'demoscene');

@@ -15,13 +15,6 @@ echo <<<END
     <link href="https://fonts.googleapis.com/css2?family=PT+Mono&display=swap" rel="stylesheet">
 
     <title>Demoscene</title>
-    <a class="link" style="top: 16px;" href='information.html'><u>i</u></a>
-    <a class="link" style="top: 38px; font-size: 16px" onclick="toTop()"><u>&lt;</u></a>
-    <a class="link" style="top: 64px; font-size: 16px" onclick="toBottom()"><u>&gt;</u></a>
-
-    <!-- 112, 136, 160, 184, 208 -->
-    <a class="link standart" style="top: 112px; font-size: 16px" onclick="setTheme('standart')">S</a>
-    <a class="link black" style="top: 136px; font-size: 16px" onclick="setTheme('black')">B</a>
   </head>
 
   <body class="black">
@@ -33,8 +26,8 @@ try {
   mysqli_set_charset($link, "utf8");
 
   $bad_apple = array(
-      "start" => 102096,
-      "end" => 108698,
+    "start" => 102096,
+    "end" => 108698,
   );
 
   // Load before bad apple 
@@ -80,6 +73,15 @@ try {
 }
 
 echo <<<END
+    <!-- Links -->
+    <a class="link" style="top: 16px;" href='information.html'><u>i</u></a>
+    <a class="link" style="top: 38px; font-size: 16px" onclick="toTop()"><u>&lt;</u></a>
+    <a class="link" style="top: 64px; font-size: 16px" onclick="toBottom()"><u>&gt;</u></a>
+
+    <!-- 112, 136, 160, 184, 208 -->
+    <a class="link standart" style="top: 112px; font-size: 16px" onclick="setTheme('standart')">S</a>
+    <a class="link black" style="top: 136px; font-size: 16px" onclick="setTheme('black')">B</a>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
     <script src="script.js"></script>
     <script src="animation.js"></script>
