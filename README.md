@@ -16,3 +16,17 @@
 Статистика за 125 недель:  
 
 ![stats_week_125](./images/StatsW125.png)
+
+## Данные
+Последняя версия использует PostgreSQL в качестве базы данных. Создание схемы описано ниже.  
+
+```sql
+CREATE DATABASE demoscene;
+\c demoscene
+
+CREATE TABLE comments (
+  id SERIAL PRIMARY KEY,
+  comment TEXT NOT NULL,
+  birthtime TIMESTAMP(0) NOT NULL DEFAULT NOW()
+);
+```

@@ -1,14 +1,23 @@
 <?php
-if (isset($_POST['str'])) { $str = $_POST['str']; } else { $str = ''; }
+$str = isset($_POST['str']) ? $_POST['str'] : '';
 $id = isset($_POST['id']) ? (int) $_POST['id'] : 0;
 
 try {
-  $link = new mysqli(getenv('DEMOSCENE_DATABASE_URL'), getenv('DEMOSCENE_USER'), getenv('DEMOSCENE_PASSWORD'), 'demoscene');
+  $dsn = sprintf(
+    'pgsql:host=%s;port=%s;dbname=%s',
+    getenv('DEMOSCENE_DATABASE_URL'),
+    getenv('DEMOSCENE_DATABASE_PORT'),
+    getenv('DEMOSCENE_DATABASE_NAME')
+  );
+  $link = new PDO($dsn, getenv('DEMOSCENE_USER'), getenv('DEMOSCENE_PASSWORD'), array(
+    PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+    PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
+    PDO::ATTR_EMULATE_PREPARES => false,
+  ));
+  $link->exec("SET NAMES 'UTF8'");
 } catch (Exception $e) {
   exit();
 }
-
-mysqli_set_charset($link, "utf8");
 
 if ($str != '') {
   $str = str_replace(array('<', '>'), array('&lt;', '&gt;'), $str);
@@ -22,21 +31,18 @@ if ($str != '') {
   if (trim(strip_tags($str)) != '') {
     $str = preg_replace('/\[img\]([^"]+?)\[\/img\]/', '<img src="${1}"></img loading="lazy">', $str);
 
-    $sql = $link->prepare('INSERT INTO near(comments, data) VALUES (?, NOW());');
-    $sql->bind_param('s', $str);
-    $sql->execute();
-
-    $sql->close();
+    $sql = $link->prepare('INSERT INTO comments(comment, birthtime) VALUES (:comment, NOW())');
+    $sql->execute(array('comment' => $str));
   }
 }
 
 // Load new comments if exists
-$sql = "SELECT comments, data, id FROM near WHERE id>$id ORDER BY id;";
-$result = mysqli_query($link, $sql);
+$sql = $link->prepare('SELECT comment, birthtime, id FROM comments WHERE id > :id ORDER BY id');
+$sql->execute(array('id' => $id));
 $types = array();
 
-while ($row = mysqli_fetch_assoc($result)) {
-  array_push($types, array('comments' => $row['comments'], 'data' => $row['data'], 'id' => $row['id']));
+while ($row = $sql->fetch()) {
+  array_push($types, array('comments' => $row['comment'], 'birthtime' => $row['birthtime'], 'id' => $row['id']));
 }
 
 echo json_encode($types, JSON_UNESCAPED_UNICODE);

@@ -22,45 +22,29 @@ echo <<<END
   END;
 
 try {
-  $link = new mysqli(getenv('DEMOSCENE_DATABASE_URL'), getenv('DEMOSCENE_USER'), getenv('DEMOSCENE_PASSWORD'), 'demoscene');
-  mysqli_set_charset($link, "utf8");
-
-  $bad_apple = array(
-    "start" => 102096,
-    "end" => 108698,
+  $dsn = sprintf(
+    'pgsql:host=%s;port=%s;dbname=%s',
+    getenv('DEMOSCENE_DATABASE_URL'),
+    getenv('DEMOSCENE_DATABASE_PORT'),
+    getenv('DEMOSCENE_DATABASE_NAME')
   );
+  $link = new PDO($dsn, getenv('DEMOSCENE_USER'), getenv('DEMOSCENE_PASSWORD'), array(
+    PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+    PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
+    PDO::ATTR_EMULATE_PREPARES => false,
+  ));
+  $link->exec("SET NAMES 'UTF8'");
 
-  // Load before bad apple 
-  $sql = "SELECT comments, data, id FROM near WHERE id < {$bad_apple['start']} ORDER BY id";
-  $result = mysqli_query($link, $sql);
+  $sql = $link->prepare('SELECT comment, birthtime, id FROM comments ORDER BY id');
+  $sql->execute();
 
-  while ($row = mysqli_fetch_array($result)) {
+  while ($row = $sql->fetch()) {
     echo (
       "<pre class='comment' id='" . $row['id'] . "'>" .
-        "<span class='bg'>" . $row['data'] . ' | #' . $row['id'] . '</span><br>' .
-        $row['comments'] .
+        "<span class='bg'>" . $row['birthtime'] . ' | #' . $row['id'] . '</span><br>' .
+        $row['comment'] .
       "</pre>"
     );
-  }
-
-  // Bad apple button
-  echo (
-    "<div id='bad-apple-comments'>" . 
-      "<pre id='bad-apple-pre'>" .
-        "<span class='bg'>Cinema: Bad Apple | #{$bad_apple['start']} - #{$bad_apple['end']}</span><br>" .
-        "<button id='bad-apple-button' data-start='{$bad_apple['start']}' data-end='{$bad_apple['end']}'>" .
-          "LOAD" .
-        "</button>" .
-      "</pre>" . 
-    "</div>"
-  );
-
-  // Load after bad apple
-  $sql = "SELECT comments, data, id FROM near WHERE id > {$bad_apple['end']}";
-  $result = mysqli_query($link, $sql);
-
-  while ($row = mysqli_fetch_array($result)) {
-    echo "<pre class='comment' id='" . $row['id'] . "'>" . "<span class='bg'>" . $row['data'] . ' | #' . $row['id'] . '</span><br>' . $row['comments'] . "</pre>";
   }
 
   echo <<<END

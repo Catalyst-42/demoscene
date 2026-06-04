@@ -5,7 +5,7 @@ from math import ceil
 from json import load
 from datetime import datetime
 
-# JSON Dump: MySQL Workbench > SELECT * ... > Export JSON
+# JSON Dump: SELECT * ... > Export JSON
 comments = load(open("dump.json"))
 
 # Parse date fields
