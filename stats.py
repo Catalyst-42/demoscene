@@ -6,11 +6,14 @@ from json import load
 from datetime import datetime
 
 # JSON Dump: MySQL Workbench > SELECT * ... > Export JSON
-comments = load(open("dump.json"))
+comments = load(open("dump.json"), strict=False)
 
 # Parse date fields
 for i in range(len(comments)):
     comments[i]["data"] = datetime.strptime(comments[i]["data"], "%Y-%m-%d %H:%M:%S")
+
+# Remove system ones
+comments = [c for c in comments if c["data"] > comments[0]["data"]]
 
 # Get comment history
 total_weeks = ceil((comments[-1]["data"] - comments[0]["data"]).days / 7)

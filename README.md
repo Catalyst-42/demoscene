@@ -13,6 +13,6 @@
 Итоги первого сезона на [webarchive](https://web.archive.org/web/20221130191402/https://demoscene.herokuapp.com/)  
 Второй сезон на [сайте](https://tauceti.nhost.me/demoscene/)
 
-Статистика за 125 недель:  
+Статистика за 182 недели:  
 
-![stats_week_125](./images/StatsW125.png)
+![stats_week_182](./images/StatsW182.png)
