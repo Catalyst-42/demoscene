@@ -10,8 +10,8 @@
 
 ## Ссылки
 Первый сезон на [webarchive](https://web.archive.org/web/20221130191402/https://demoscene.herokuapp.com/)  
-Второй сезон на [webarchive](https://web.archive.org/web/20261031161025/https://tauceti.nhost.me/demoscene/)
-Третий сезон на [Tor сервере](http://tauceti5lowrh27defk7hczwi7sv45mcii7x3yzyrzxhutocwyqlqfqd.onion/demoscene/)
+Второй сезон на [webarchive](https://web.archive.org/web/20261031161025/https://tauceti.nhost.me/demoscene/)  
+Третий сезон на [Tor сервере](http://tauceti5lowrh27defk7hczwi7sv45mcii7x3yzyrzxhutocwyqlqfqd.onion/demoscene/)  
 
 ## Данные
 Последняя версия использует PostgreSQL в качестве базы данных. Создание схемы описано ниже.  
