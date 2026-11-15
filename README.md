@@ -8,11 +8,21 @@
 
 ![modifiers](./images/DemosceneModifiers.png)
 
-Первый сезон проекта существовал на Heroku до того, как они отключили бесплатные аккаунты, второй сезон долго находился на Sprinthost пока не переехал на Nanohost.  
+## Ссылки
+Первый сезон на [webarchive](https://web.archive.org/web/20221130191402/https://demoscene.herokuapp.com/)  
+Второй сезон на [webarchive](https://web.archive.org/web/20261031161025/https://tauceti.nhost.me/demoscene/)
+Третий сезон на [Tor сервере](http://tauceti5lowrh27defk7hczwi7sv45mcii7x3yzyrzxhutocwyqlqfqd.onion/demoscene/)
 
-Итоги первого сезона на [webarchive](https://web.archive.org/web/20221130191402/https://demoscene.herokuapp.com/)  
-Второй сезон на [сайте](https://tauceti.nhost.me/demoscene/)
+## Данные
+Последняя версия использует PostgreSQL в качестве базы данных. Создание схемы описано ниже.  
 
-Статистика за 182 недели:  
+```sql
+CREATE DATABASE demoscene;
+\c demoscene
 
-![stats_week_182](./images/StatsW182.png)
+CREATE TABLE comments (
+  id SERIAL PRIMARY KEY,
+  comment TEXT NOT NULL,
+  birthtime TIMESTAMP(0) NOT NULL DEFAULT NOW()
+);
+```

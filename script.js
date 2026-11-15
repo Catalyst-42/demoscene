@@ -20,16 +20,7 @@ $('.send').click(function () {
 
   let id = $(".comment:last-child").length ? $(".comment:last-child")[$(".comment:last-child").length - 1].id : 0;
   xhttp.send('str=' + encodeURIComponent($(".input").val()) + '&id=' + id);
-  $(".input").val('');
-})
-
-// Load bad apple cinema
-$('#bad-apple-button').click(function () {
-  $('#bad-apple-button').replaceWith('<span>Загружается...</span>');
-
-  xhttp.open("POST", window.location.href + "load_bad_apple.php");
-  xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-  xhttp.send();
+  $(".input").val('')
 })
 
 function update () {
@@ -40,11 +31,11 @@ function update () {
   xhttp.send("&id=" + id);
 }
 
-function addAnswer(data, where) {
-  data = JSON.parse(data);
+function addAnswer(birthtime, where) {
+  birthtime = JSON.parse(birthtime);
 
-  for (let i=0; i<data.length; i++) {
-    let p = `<pre class="comment" id="${data[i]["id"]}"><span class="bg">${data[i]["data"]} | #${data[i]["id"]}</span><br>${data[i]["comments"]}</pre>`;
+  for (let i=0; i<birthtime.length; i++) {
+    let p = `<pre class="comment" id="${birthtime[i]["id"]}"><span class="bg">${birthtime[i]["birthtime"]} | #${birthtime[i]["id"]}</span><br>${birthtime[i]["comments"]}</pre>`;
     $(where).append(p);
   }
 }
@@ -57,9 +48,6 @@ xhttp.onreadystatechange = function () {
 
   if (this.responseURL.includes('send.php')) {
     addAnswer(this.responseText, '#comments-container');
-  } else if (this.responseURL.includes('load_bad_apple.php')) {
-    $('#bad-apple-pre').remove();
-    addAnswer(this.responseText, '#bad-apple-comments');
   }
 }
 

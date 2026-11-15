@@ -1,12 +1,12 @@
+from datetime import datetime
+from json import load
+from math import ceil
+
 import matplotlib.pyplot as plt
 from matplotlib.dates import DateFormatter
 
-from math import ceil
-from json import load
-from datetime import datetime
-
-# JSON Dump: MySQL Workbench > SELECT * ... > Export JSON
-comments = load(open("dump.json"), strict=False)
+# JSON Dump: SELECT * ... > Export JSON
+comments = load(open("dumps/Season 2/2026-11-05.json"))
 
 # Parse date fields
 for i in range(len(comments)):
@@ -25,6 +25,10 @@ comments_history = {
 total = 0
 for comment in comments:
     total += 1
+
+    if comment["data"] < comments[0]["data"]:
+        continue
+
     comments_history["x"].append(comment["data"])
     comments_history["y"].append(total)
 
@@ -44,23 +48,16 @@ ax = list(axs.items())
 # Comments
 ax[0][1].set_title("Число комментариев", loc="left")
 ax[0][1].plot(
-    comments_history["x"],
-    comments_history["y"],
-    color="tab:purple",
-    linewidth=3
+    comments_history["x"], comments_history["y"], color="tab:purple", linewidth=3
 )
-ax[0][1].xaxis.set_major_formatter(DateFormatter('%d.%m.%Y'))
+ax[0][1].xaxis.set_major_formatter(DateFormatter("%d.%m.%Y"))
 ax[0][1].set_xlim(comments_history["x"][0], comments_history["x"][-1])
 ax[0][1].set_ylim(0, total + 500)
 
 # Activity
 ax[1][1].set_title("Активность по неделям", loc="left")
-ax[1][1].hist(
-    comments_history["x"],
-    bins=total_weeks,
-    color="tab:purple"
-)
-ax[1][1].xaxis.set_major_formatter(DateFormatter('%d.%m.%Y'))
+ax[1][1].hist(comments_history["x"], bins=total_weeks, color="tab:purple")
+ax[1][1].xaxis.set_major_formatter(DateFormatter("%d.%m.%Y"))
 ax[1][1].set_xlim(comments_history["x"][0], comments_history["x"][-1])
 ax[1][1].set_ylim([1, 10**4])
 ax[1][1].set_yscale("log")

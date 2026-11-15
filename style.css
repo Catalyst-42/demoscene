@@ -1,7 +1,3 @@
-/* html {
-  scroll-behavior: smooth;
-} */
-
 body {
   font-family: 'PT Mono', Courier, monospace;
   display: block;    
@@ -120,17 +116,17 @@ body.black {
 
 body.black .bg {
   background: black;
-  color: #0f0;
+  color: #f00;
 }
 
 body.black textarea {
   background-color: black;
-  border: 1px solid #0f0;
+  border: 1px solid #f00;
   color: white;
 }
 
 body.black textarea:focus {
-  outline: 1px solid #0f0;
+  outline: 1px solid #f00;
 }
 
 body.black input,
@@ -142,5 +138,5 @@ body.black button {
   outline: none;
   color: white;
   background-color: black;
-  border: 1px solid #0f0;
+  border: 1px solid #f00;
 }
